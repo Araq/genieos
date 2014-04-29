@@ -9,4 +9,4 @@ license       = "MIT"
 InstallFiles = "docs/CHANGES.rst,LICENSE.rst,README.rst,genieos.nim,nakefile.nim,docindex.rst,trash-binary/trash.nim,trash-binary/nimrod.cfg,trash-binary/README.rst,private/genieos_macosx.m"
 
 [Deps]
-Requires: "nake >= 1.0,argument_parser >= 0.1.2"
+Requires: "nake >= 1.0,argument_parser >= 0.1.2, x11 >= 1.0"
