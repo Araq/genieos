@@ -137,7 +137,7 @@ when defined(Linux):
       BUFSIZ = 2048 # missing from x headers? i found it on the internet
     var
       clip,utf8,ty: TAtom
-      dpy: DPisplay
+      dpy: PDisplay
       win: TWindow
       ev: TXEvent
       fmt: cint
