@@ -129,6 +129,52 @@ when defined(macosx):
     assert (not text.isNil())
     genieosMacosxSetClipboardString(cstring(text))
 
+when defined(Linux):
+  import x, xlib, xatom
+  proc get_clipboard_string*: string =
+    result = newStringOfCap(512)
+    const
+      BUFSIZ = 2048 # missing from x headers? i found it on the internet
+    var
+      clip,utf8,ty: TAtom
+      dpy: DPisplay
+      win: TWindow
+      ev: TXEvent
+      fmt: cint
+      off = 0.clong
+      data: ptr cuchar
+      len,more: culong
+    
+    dpy = XOpenDisplay(nil)
+    if dpy.isNil: return
+    
+    utf8 = XInternAtom(dpy,"UTF8_STRING",0)
+    clip = XInternAtom(dpy,"__MY_STR",0)
+    win = XCreateSimpleWindow(dpy, defaultRootWindow(dpy), 0,0,1,1,0,
+      CopyFromParent, CopyFromParent)
+    
+    discard XConvertSelection(dpy, XA_PRIMARY, utf8, clip, win, CurrentTime)
+    discard XNextEvent(dpy, ev.addr)
+    
+    if ev.theType == SelectionNotify:
+      let sel = cast[PXSelectionEvent](ev.addr)
+      if sel.property != None:
+        while true:
+          discard XGetWindowProperty(
+            dpy, win, sel.property, off, BUFSIZ.clong,
+            0.TBool, utf8, ty.addr, fmt.addr, len.addr,
+            more.addr, data.addr)
+          let newLen = off.int + len.int
+          if result.len < newLen:
+            result.setLen newLen
+          copyMem result[off.int].addr, data, len.int
+          
+          discard XFree(data)
+          off += len.clong
+          if more.int < 1:
+            break
+    
+    discard XCloseDisplay(dpy)
 
 when isMainModule:
   echo "Dummy tests"
