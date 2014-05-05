@@ -23,7 +23,7 @@ What to do for a new public release of genieos?
   message, copy and paste a text version of the changes log into the message.
   Add rst item markers.
 * Move closed issues to the release milestone.
-* ``git push origin master stable --tags.``.
+* ``git push origin master stable --tags``.
 * Increase version const number in main module, at least maintenance (stable
   version + 0.0.1):
 
