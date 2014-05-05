@@ -49,7 +49,7 @@ when defined(nimdoc):
     ## unlike os.removeFile() and os.removeDir() this works for any kind of file
     ## type.
     ##
-    ## At the moment this is only implemented under macosx.
+    ## Available on: macosx.
 
   proc playSound*(soundType = defaultBeep): float64 {.discardable.}
     ## Tries to play a sound provided by your OS.
@@ -63,18 +63,22 @@ when defined(nimdoc):
     ## supported because sounds typically have a hardcoded path which may change
     ## on newer versions. Just in case file a bug report.
     ##
-    ## At the moment this is only implemented under macosx.
+    ## Available on: macosx.
 
   proc get_clipboard_string*(): string
     ## Returns the contents of the OS clipboard as a string.
     ##
     ## Returns nil if the clipboard can't be accessed or it's not supported.
+    ##
+    ## Available on: linux, macosx.
 
   proc set_clipboard*(text: string)
     ## Sets the OS clipboard to the specified text.
     ##
     ## The text has to be a valid value, passing nil will assert in debug
     ## builds and crash in release builds.
+    ##
+    ## Available on: macosx.
 
   proc get_clipboard_change_timestamp*(): int
     ## Returns an integer representing the last version of the clipboard.
@@ -86,6 +90,8 @@ when defined(nimdoc):
     ## Note that a change of the timestamp doesn't imply a change of
     ## *contents*.  The user could have well copied the same content into the
     ## clipboard.
+    ##
+    ## Available on: macosx.
 
 when defined(macosx):
   {.passL: "-framework AppKit".}
