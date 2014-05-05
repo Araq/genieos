@@ -20,7 +20,7 @@ span.LongStringLit {color: blue}
 span.CharLit {color: blue}
 span.EscapeSequence {color: black}
 span.Operator {color: black}
-span.Punctation {color: black}
+span.Punctuation {color: black}
 span.Comment, span.LongComment {font-style:italic; color: green}
 span.RegularExpression  {color: DarkViolet}
 span.TagStart {color: DarkViolet}
@@ -250,26 +250,35 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
 <li>
   <a class="reference" href="#7" id="57">Types</a>
   <ul class="simple">
-      <li><a class="reference" href="#101"><wbr />TSound</a></li>
+      <li><a class="reference" href="#TSound"
+    title="TSound = enum 
+  defaultBeep, recycleBin"><wbr />TSound</a></li>
 
   </ul>
 </li>
 <li>
   <a class="reference" href="#10" id="60">Consts</a>
   <ul class="simple">
-      <li><a class="reference" href="#102"><wbr />VERSION_<wbr />STR</a></li>
-  <li><a class="reference" href="#103"><wbr />VERSION_<wbr />INT</a></li>
+      <li><a class="reference" href="#VERSION_STR"
+    title="VERSION_STR = &quot;9.3.1&quot;"><wbr />VERSION_<wbr />STR</a></li>
+  <li><a class="reference" href="#VERSION_INT"
+    title="VERSION_INT = (major: 9, minor: 3, maintenance: 1)"><wbr />VERSION_<wbr />INT</a></li>
 
   </ul>
 </li>
 <li>
   <a class="reference" href="#12" id="62">Procs</a>
   <ul class="simple">
-      <li><a class="reference" href="#104"><wbr />play<wbr />Sound</a></li>
-  <li><a class="reference" href="#105"><wbr />recycle</a></li>
-  <li><a class="reference" href="#106"><wbr />get_<wbr />clipboard_<wbr />string</a></li>
-  <li><a class="reference" href="#107"><wbr />get_<wbr />clipboard_<wbr />change_<wbr />timestamp</a></li>
-  <li><a class="reference" href="#108"><wbr />set_<wbr />clipboard</a></li>
+      <li><a class="reference" href="#playSound,"
+    title="playSound(soundType = defaultBeep): float64"><wbr />play<wbr />Sound</a></li>
+  <li><a class="reference" href="#recycle,string"
+    title="recycle(filename: string)"><wbr />recycle</a></li>
+  <li><a class="reference" href="#get_clipboard_string,"
+    title="get_clipboard_string(): string"><wbr />get_<wbr />clipboard_<wbr />string</a></li>
+  <li><a class="reference" href="#get_clipboard_change_timestamp,"
+    title="get_clipboard_change_timestamp(): int"><wbr />get_<wbr />clipboard_<wbr />change_<wbr />timestamp</a></li>
+  <li><a class="reference" href="#set_clipboard,string"
+    title="set_clipboard(text: string)"><wbr />set_<wbr />clipboard</a></li>
 
   </ul>
 </li>
@@ -279,11 +288,11 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
 <div class="content" id="content">
 <p>Too awesome procs to be included in nimrod.os module.</p>
 <p>This module contains several procs which are <em>too awesome</em> to be included in <a class="reference external" href="http://nimrod-code.org">Nimrod's</a> <a class="reference external" href="http://nimrod-code.org/os.html">os module</a>. Procs may not be available for your platform, please check their availability at compile time with <tt class="docutils literal"><span class="pre">when</span></tt>. Example checking for the availability of the <tt class="docutils literal"><span class="pre">recycle</span></tt> proc:</p>
-<pre><span class="Keyword">when</span> <span class="Keyword">not</span> <span class="Identifier">defined</span><span class="Punctation">(</span><span class="Identifier">genieos</span><span class="Operator">.</span><span class="Identifier">recycle</span><span class="Punctation">)</span><span class="Punctation">:</span>
-  <span class="Keyword">proc</span> <span class="Identifier">recycle</span><span class="Punctation">(</span><span class="Identifier">filename</span><span class="Punctation">:</span> <span class="Identifier">string</span><span class="Punctation">)</span><span class="Punctation">:</span>
-    <span class="Keyword">if</span> <span class="Identifier">existsDir</span> <span class="Identifier">filename</span><span class="Punctation">:</span>
+<pre><span class="Keyword">when</span> <span class="Keyword">not</span> <span class="Identifier">defined</span><span class="Punctuation">(</span><span class="Identifier">genieos</span><span class="Operator">.</span><span class="Identifier">recycle</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+  <span class="Keyword">proc</span> <span class="Identifier">recycle</span><span class="Punctuation">(</span><span class="Identifier">filename</span><span class="Punctuation">:</span> <span class="Identifier">string</span><span class="Punctuation">)</span><span class="Punctuation">:</span>
+    <span class="Keyword">if</span> <span class="Identifier">existsDir</span> <span class="Identifier">filename</span><span class="Punctuation">:</span>
       <span class="Identifier">removeDir</span> <span class="Identifier">filename</span>
-    <span class="Keyword">else</span><span class="Punctation">:</span>
+    <span class="Keyword">else</span><span class="Punctuation">:</span>
       <span class="Identifier">removeFile</span> <span class="Identifier">filename</span></pre><p>Source code for this module can be found at <a class="reference external" href="https://github.com/gradha/genieos">https://github.com/gradha/genieos</a>.</p>
 
 <div class="section" id="6">
@@ -294,9 +303,10 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
 <div class="section" id="7">
 <h1><a class="toc-backref" href="#57">Types</a></h1>
 <dl class="item">
-<dt id="101"><pre><span class="Identifier">TSound</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
+<dt id="TSound"><a name="TSound"></a><pre><span class="Identifier">TSound</span> <span class="Other">=</span> <span class="Keyword">enum</span> 
   <span class="Identifier">defaultBeep</span><span class="Other">,</span> <span class="Identifier">recycleBin</span></pre></dt>
 <dd>
+
 
 </dd>
 
@@ -304,11 +314,12 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
 <div class="section" id="10">
 <h1><a class="toc-backref" href="#60">Consts</a></h1>
 <dl class="item">
-<dt id="102"><pre><span class="Identifier">VERSION_STR</span> <span class="Other">=</span> <span class="StringLit">&quot;9.3.1&quot;</span></pre></dt>
+<dt id="VERSION_STR"><a name="VERSION_STR"></a><pre><span class="Identifier">VERSION_STR</span> <span class="Other">=</span> <span class="StringLit">&quot;9.3.1&quot;</span></pre></dt>
 <dd>
 Module version as a string.
+
 </dd>
-<dt id="103"><pre><span class="Identifier">VERSION_INT</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">major</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">,</span> <span class="Identifier">minor</span><span class="Other">:</span> <span class="DecNumber">3</span><span class="Other">,</span> <span class="Identifier">maintenance</span><span class="Other">:</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
+<dt id="VERSION_INT"><a name="VERSION_INT"></a><pre><span class="Identifier">VERSION_INT</span> <span class="Other">=</span> <span class="Other">(</span><span class="Identifier">major</span><span class="Other">:</span> <span class="DecNumber">9</span><span class="Other">,</span> <span class="Identifier">minor</span><span class="Other">:</span> <span class="DecNumber">3</span><span class="Other">,</span> <span class="Identifier">maintenance</span><span class="Other">:</span> <span class="DecNumber">1</span><span class="Other">)</span></pre></dt>
 <dd>
 <p>
 Module version as an integer tuple.</p>
@@ -316,45 +327,54 @@ Module version as an integer tuple.</p>
 <p>Minor version changes can add procs (and maybe default parameters). Minor odd versions are development/git/unstable versions. Minor even versions are public stable releases.</p>
 <p>Maintenance version changes mean I'm not perfect yet despite all the kpop I watch.</p>
 
+
 </dd>
 
 </dl></div>
 <div class="section" id="12">
 <h1><a class="toc-backref" href="#62">Procs</a></h1>
 <dl class="item">
-<dt id="104"><pre><span class="Keyword">proc</span> <span class="Identifier">playSound</span><span class="Other">(</span><span class="Identifier">soundType</span> <span class="Other">=</span> <span class="Identifier">defaultBeep</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float64</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> 
-    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">FReadDir</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
+<dt id="playSound"><a name="playSound,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">playSound</span><span class="Other">(</span><span class="Identifier">soundType</span> <span class="Other">=</span> <span class="Identifier">defaultBeep</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float64</span> <span class="Other">{.</span><span class="Identifier">discardable</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> 
+    <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">FReadDir</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">uses</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 <p>Tries to play a sound provided by your OS.</p>
 <p>May stop playing if your process exits in the meantime. For this reason the proc returns the amount of seconds you have to wait for the sound to fully play out in case you want to wait for it.</p>
 <p>Returns a negative value if for some reason the sound could not be loaded or played back to the user. In most cases this would mean your OS is not supported because sounds typically have a hardcoded path which may change on newer versions. Just in case file a bug report.</p>
-<p>At the moment this is only implemented under macosx.</p>
+<p>Available on: macosx.</p>
+
 
 </dd>
-<dt id="105"><pre><span class="Keyword">proc</span> <span class="Identifier">recycle</span><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">EOS</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
+<dt id="recycle"><a name="recycle,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">recycle</span><span class="Other">(</span><span class="Identifier">filename</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">EOS</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">uses</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 <p>Moves a file or directory to the recycle bin of the user.</p>
 <p>If there are any errors recycling the file EOS will be raised. Note that unlike os.removeFile() and os.removeDir() this works for any kind of file type.</p>
-<p>At the moment this is only implemented under macosx.</p>
+<p>Available on: macosx.</p>
+
 
 </dd>
-<dt id="106"><pre><span class="Keyword">proc</span> <span class="Identifier">get_clipboard_string</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
+<dt id="get_clipboard_string"><a name="get_clipboard_string,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">get_clipboard_string</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">uses</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 <p>Returns the contents of the OS clipboard as a string.</p>
 <p>Returns nil if the clipboard can't be accessed or it's not supported.</p>
+<p>Available on: linux, macosx.</p>
+
 
 </dd>
-<dt id="107"><pre><span class="Keyword">proc</span> <span class="Identifier">get_clipboard_change_timestamp</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
+<dt id="get_clipboard_change_timestamp"><a name="get_clipboard_change_timestamp,"></a><pre><span class="Keyword">proc</span> <span class="Identifier">get_clipboard_change_timestamp</span><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">uses</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 <p>Returns an integer representing the last version of the clipboard.</p>
 <p>There is no way to get notified of clipboard changes, you need to poll yourself the clipboard. You can use this proc which returns the last value of the clipboard, then compare it to future values.</p>
-<p>Note that a change of the timestamp doesn't imply a change of <em>contents</em>. The user could have well copied the same content into the clipboard.</p>
+<p>Note that a change of the timestamp doesn't imply a change of <em>contents</em>.  The user could have well copied the same content into the clipboard.</p>
+<p>Available on: macosx.</p>
+
 
 </dd>
-<dt id="108"><pre><span class="Keyword">proc</span> <span class="Identifier">set_clipboard</span><span class="Other">(</span><span class="Identifier">text</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
+<dt id="set_clipboard"><a name="set_clipboard,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">set_clipboard</span><span class="Other">(</span><span class="Identifier">text</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">uses</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 <p>Sets the OS clipboard to the specified text.</p>
 <p>The text has to be a valid value, passing nil will assert in debug builds and crash in release builds.</p>
+<p>Available on: macosx.</p>
+
 
 </dd>
 
@@ -362,7 +382,7 @@ Module version as an integer tuple.</p>
 
 </div>
 
-<small>Generated: 2013-11-29 19:31:38 UTC</small>
+<small>Generated: 2014-05-05 11:07:49 UTC</small>
 </div>
 </body>
 </html>
