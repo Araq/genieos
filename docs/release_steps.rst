@@ -17,7 +17,7 @@ What to do for a new public release?
 * ``git flow release finish versionname`` (the tagname is versionname without v
   but including SNSD member, like ``9.1.2-sunny``).
 * Move closed issues from "*future milestone*" to the release milestone.
-* Push all to git: ``git push origin master develop --tags``.
+* Push all to git: ``git push origin master stable --tags``.
 * Increase version const number in main module, at least maintenance (stable
   version + 0.1.1):
 
@@ -26,7 +26,7 @@ What to do for a new public release?
   * Modify `../genieos.babel <../genieos.babel>`_.
   * Update `CHANGES.rst <CHANGES.rst>`_ development version with unknown date.
 
-* ``git commit -av`` into develop with *Bumps version numbers for develop
+* ``git commit -av`` into master with *Bumps version numbers for development
   branch. Refs #release issue*.
 * Close the dummy release issue.
 * Check out gh-pages branch and run update script.
