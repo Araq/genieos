@@ -100,7 +100,7 @@ API, but that API `FSPathMoveObjectToTrashSync` is deprecated and doesn't
 trigger the sound.
 
 Well, that's sort of cheating. I don't want to avoid using the API like
-``rm-trash`` since `that doesn't update the ``.DS_Store`` file located in the
+``rm-trash`` since `that doesn't update the .DS_Store file located in the
 .Trash folder <http://superuser.com/a/112586/10892>`_, but at least we can put
 ourselves more on equal ground by avoiding to play back the recycle bin sound
 with the silent ``-s`` parameter::
