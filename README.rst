@@ -108,10 +108,11 @@ with *real operative systems*, however, are presumed to step in at some point
 and implement these procs (or add new ones) to their *manly platforms*.
 Unfortunately they are `figuring out where the recycle bin is
 <http://stackoverflow.com/a/6807599/172690>`_ or `cleaning tiles for some
-reason <http://en.wikipedia.org/wiki/Windows_8>`_.
+reason <http://en.wikipedia.org/wiki/Windows_8>`_. Note how I carefully avoided
+any mention of snakes and dongles here... *oops*.
 
-Note how I carefully avoided any mention of snakes and dongles here... *oops*.
-Anyway, `the latest version is 9.3.1 <docs/CHANGES.rst>`_.
+Anyway, this is the stable version 9.4.0-tiffany. For a list of changes `see
+the docs/CHANGES.rst file <docs/CHANGES.rst>`_.
 
 
 Git branches
