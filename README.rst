@@ -53,11 +53,16 @@ Development version
 Use `Nimrod's babel package manager <https://github.com/nimrod-code/babel>`_ to
 install locally the github checkout::
 
+    $ babel update
     $ git clone https://github.com/gradha/genieos.git
     $ cd genieos
-    $ git checkout develop
-    $ babel install
+    $ babel install -y
 
+Alternatively you can use the following syntax to ask babel to install the
+development version::
+
+    $ babel update
+    $ babel install -y genieos#head
 
 Usage
 =====
@@ -103,21 +108,20 @@ with *real operative systems*, however, are presumed to step in at some point
 and implement these procs (or add new ones) to their *manly platforms*.
 Unfortunately they are `figuring out where the recycle bin is
 <http://stackoverflow.com/a/6807599/172690>`_ or `cleaning tiles for some
-reason <http://en.wikipedia.org/wiki/Windows_8>`_.
+reason <http://en.wikipedia.org/wiki/Windows_8>`_. Note how I carefully avoided
+any mention of snakes and dongles here... *oops*.
 
-Note how I carefully avoided any mention of snakes and dongles here... *oops*.
-Anyway, `the latest version is 9.2.0 <docs/CHANGES.rst>`_.
+Anyway, this is the stable version 9.4.0-tiffany. For a list of changes `see
+the docs/CHANGES.rst file <docs/CHANGES.rst>`_.
 
 
 Git branches
 ============
 
 This project uses the `git-flow branching model
-<https://github.com/nvie/gitflow>`_. Which means the ``master`` default branch
-doesn't *see* much movement, development happens in another branch like
-``develop``. Most people will be fine using the ``master`` branch, but if you
-want to contribute something please check out first the ``develop`` branch and
-do pull requests against that.
+<https://github.com/nvie/gitflow>`_ with reversed defaults. Stable releases are
+tracked in the ``stable`` branch. Development happens in the default ``master``
+branch.
 
 
 Feedback

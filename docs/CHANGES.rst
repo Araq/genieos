@@ -1,6 +1,14 @@
 Changes
 =======
 
+v9.4.0 `Tiffany <https://en.wikipedia.org/wiki/Tiffany_(South_Korean_singer)>`_ 2014-05-05
+------------------------------------------------------------------------------------------
+
+* `Implemented clipboard reading on linux
+  <https://github.com/gradha/genieos/issues/11>`_.
+* `Fixed forward declarations for crossplatform compatibility
+  <https://github.com/gradha/genieos/issues/13>`_.
+
 v9.2.0 `Sunny <http://en.wikipedia.org/wiki/Sunny_(singer)>`_ 2013-11-29
 ------------------------------------------------------------------------
 

@@ -6,8 +6,8 @@ let
     "trash-binary"/"README", "LICENSE", "README", "docindex"]
 
 task "babel", "Uses babel to install genieos locally":
-  if shell("babel install"):
-    echo "Now you can 'import genieos' and wait for a wish."
+  direshell("babel install -y")
+  echo "Now you can 'import genieos' and wait for a wish."
 
 proc needs_refresh(target: string, src: varargs[string]): bool =
   assert len(src) > 0, "Pass some parameters to check for"
