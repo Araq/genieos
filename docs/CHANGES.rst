@@ -1,8 +1,8 @@
 Changes
 =======
 
-v9.3.1 ??? ????-??-??
----------------------
+v9.4.0 `Tiffany <https://en.wikipedia.org/wiki/Tiffany_(South_Korean_singer)>`_ 2014-05-05
+------------------------------------------------------------------------------------------
 
 * `Implemented clipboard reading on linux
   <https://github.com/gradha/genieos/issues/11>`_.
