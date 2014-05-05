@@ -1,5 +1,6 @@
-Documentation index
-===================
+===========================
+genieos documentation index
+===========================
 
 Available documentation files for `Nimrod genie os module
 <https://github.com/gradha/genieos>`_:

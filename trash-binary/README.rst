@@ -1,5 +1,6 @@
-trash
-=====
+=====================
+genieos trash command
+=====================
 
 No, no, not that this is trash. As `Hyoyeon
 <http://en.wikipedia.org/wiki/Kim_Hyo-yeon>`_ correctly points out, this is

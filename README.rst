@@ -1,5 +1,6 @@
-Nimrod genie os module
-======================
+=====================
+Nimrod genieos module
+=====================
 
 `Nimrod <http://nimrod-lang.org>`_ provides the `os module
 <http://nimrod-lang.org/os.html>`_ with OS related procs to manage files among
