@@ -1,6 +1,6 @@
 [Package]
 name          = "genieos"
-version       = "9.4.0"
+version       = "9.4.1"
 author        = "Grzegorz Adam Hankiewicz"
 description   = """Too awesome procs to be included in nimrod.os module."""
 license       = "MIT"

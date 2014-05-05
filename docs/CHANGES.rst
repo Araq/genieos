@@ -1,5 +1,12 @@
-Changes
-=======
+Genieos changes log
+===================
+
+Changes for https://github.com/gradha/genieos.
+
+v9.4.1 ??? ????-??-??
+---------------------
+
+* Nothing yet.
 
 v9.4.0 `Tiffany <https://en.wikipedia.org/wiki/Tiffany_(South_Korean_singer)>`_ 2014-05-05
 ------------------------------------------------------------------------------------------
