@@ -53,11 +53,16 @@ Development version
 Use `Nimrod's babel package manager <https://github.com/nimrod-code/babel>`_ to
 install locally the github checkout::
 
+    $ babel update
     $ git clone https://github.com/gradha/genieos.git
     $ cd genieos
-    $ git checkout develop
-    $ babel install
+    $ babel install -y
 
+Alternatively you can use the following syntax to ask babel to install the
+development version::
+
+    $ babel update
+    $ babel install -y genieos#head
 
 Usage
 =====
