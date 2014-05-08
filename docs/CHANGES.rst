@@ -7,7 +7,8 @@ Changes for https://github.com/gradha/genieos.
 v9.4.1 ??? ????-??-??
 ---------------------
 
-* Nothing yet.
+* `Disabled macosx clipboard debug printfs
+  <https://github.com/gradha/genieos/issues/18>`_.
 
 v9.4.0 `Tiffany <https://en.wikipedia.org/wiki/Tiffany_(South_Korean_singer)>`_ 2014-05-05
 ------------------------------------------------------------------------------------------

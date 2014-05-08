@@ -81,7 +81,7 @@ char *genieosMacosxClipboardString(void)
 	if (!g_pasteboard)
 		init_pasteboard();
 	if (!g_pasteboard) {
-		printf("Error getting pasteboard!");
+		//printf("Error getting pasteboard!");
 		goto exit;
 	}
 
@@ -90,7 +90,7 @@ char *genieosMacosxClipboardString(void)
 		options = [[NSDictionary dictionaryWithObject:g_text_uti
 			forKey:NSPasteboardURLReadingContentsConformToTypesKey] retain];
 	if (!options) {
-		printf("Error allocating options dictionary!");
+		//printf("Error allocating options dictionary!");
 		goto exit;
 	}
 
@@ -134,7 +134,7 @@ void genieosMacosxSetClipboardString(const char *text)
 	if (!g_pasteboard)
 		init_pasteboard();
 	if (!g_pasteboard) {
-		printf("Error getting pasteboard!");
+		//printf("Error getting pasteboard!");
 		return;
 	}
 
