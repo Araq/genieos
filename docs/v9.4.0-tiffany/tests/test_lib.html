@@ -5,13 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Index</title>
+<title>Module test_lib</title>
 <style type="text/css">
-
-body {
-  color: black;
-  background: white;
-}
 
 span.DecNumber {color: blue}
 span.BinNumber {color: blue}
@@ -25,7 +20,7 @@ span.LongStringLit {color: blue}
 span.CharLit {color: blue}
 span.EscapeSequence {color: black}
 span.Operator {color: black}
-span.Punctation {color: black}
+span.Punctuation {color: black}
 span.Comment, span.LongComment {font-style:italic; color: green}
 span.RegularExpression  {color: DarkViolet}
 span.TagStart {color: DarkViolet}
@@ -243,93 +238,29 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
 </head>
 <body>
 <div class="document" id="documentId">
-<h1 class="title">Index</h1>
-<p>Modules: <a href="./CHANGES.html">CHANGES</a>, <a href="./docindex.html">docindex</a>, <a href="genieos.html">genieos</a>, <a href="./README.html">README</a>, <a href="./release_steps.html">release_steps</a>.<br><p /><h2>API symbols</h2>
-<dt><span>get_clipboard_change_timestamp:</span></dt><ul class="simple"><dd>
-<li><a class="reference external"
-          title="Returns an integer representing the last version of the clipboard.…" href="genieos.html#get_clipboard_change_timestamp,">genieos : get_clipboard_change_timestamp*(): int</a></li>
-          <li><a class="reference external" href="genieos.html#get_clipboard_change_timestamp,_2">genieos : get_clipboard_change_timestamp*(): int</a></li>
-          </ul></dd>
-<dt><span>get_clipboard_string:</span></dt><ul class="simple"><dd>
-<li><a class="reference external"
-          title="Returns the contents of the OS clipboard as a string.…" href="genieos.html#get_clipboard_string,">genieos : get_clipboard_string*(): string</a></li>
-          <li><a class="reference external" href="genieos.html#get_clipboard_string,_2">genieos : get_clipboard_string*(): string</a></li>
-          </ul></dd>
-<dt><span>playSound:</span></dt><ul class="simple"><dd>
-<li><a class="reference external"
-          title="Tries to play a sound provided by your OS.…" href="genieos.html#playSound,">genieos : playSound*(soundType = defaultBeep): float64</a></li>
-          <li><a class="reference external" href="genieos.html#playSound,_2">genieos : playSound*(soundType = defaultBeep): float64</a></li>
-          </ul></dd>
-<dt><span>recycle:</span></dt><ul class="simple"><dd>
-<li><a class="reference external"
-          title="Moves a file or directory to the recycle bin of the user.…" href="genieos.html#recycle,string">genieos : recycle*(filename: string)</a></li>
-          <li><a class="reference external" href="genieos.html#recycle,string_2">genieos : recycle*(filename: string)</a></li>
-          </ul></dd>
-<dt><span>set_clipboard:</span></dt><ul class="simple"><dd>
-<li><a class="reference external"
-          title="Sets the OS clipboard to the specified text.…" href="genieos.html#set_clipboard,string">genieos : set_clipboard*(text: string)</a></li>
-          <li><a class="reference external" href="genieos.html#set_clipboard,string_2">genieos : set_clipboard*(text: string)</a></li>
-          </ul></dd>
-<dt><span>TSound:</span></dt><ul class="simple"><dd>
-<li><a class="reference external" href="genieos.html#TSound">genieos : TSound</a></li>
-          </ul></dd>
-<dt><span>VERSION_INT:</span></dt><ul class="simple"><dd>
-<li><a class="reference external"
-          title="\…" href="genieos.html#VERSION_INT">genieos : VERSION_INT</a></li>
-          </ul></dd>
-<dt><span>VERSION_STR:</span></dt><ul class="simple"><dd>
-<li><a class="reference external"
-          title="Module version as a string." href="genieos.html#VERSION_STR">genieos : VERSION_STR</a></li>
-          </ul></dd>
-</p>
+<h1 class="title">Module test_lib</h1>
+<div class="navigation" id="navigation">
+<ul class="simple">
+<li>
+  <a class="reference" href="#6" id="56">Imports</a>
+  <ul class="simple">
+    
+  </ul>
+</li>
 
-<small>Last modified: 2015-01-17 20:21 UTC. Local time: 2015-01-17 21:21.
-<div id="counter"></div>
-</small>
-<br>Rendered by lazy_rest 0.2.2.
+</ul>
+</div>
+<div class="content" id="content">
+Tests genieos module procs.
+<div class="section" id="6">
+<h1><a class="toc-backref" href="#56">Imports</a></h1>
+<dl class="item">
+<a class="reference external" href="genieos.html">genieos</a>, <a class="reference external" href="strutils.html">strutils</a>, <a class="reference external" href="os.html">os</a>
+</dl></div>
+
+</div>
+
+<small>Generated: 2015-01-17 21:21:24 UTC</small>
 </div>
 </body>
-<script type="text/javascript">
-// Time difference code from http://stackoverflow.com/q/11479170/172690
-function timeDifference(current, previous) {
-    var msPerMinute = 60 * 1000;
-    var msPerHour = msPerMinute * 60;
-    var msPerDay = msPerHour * 24;
-    var msPerMonth = msPerDay * 30;
-    var msPerYear = msPerDay * 365;
-
-    var elapsed = current - previous;
-
-    if (elapsed < msPerMinute) {
-         return Math.round(elapsed/1000) + ' seconds ago';
-    } else if (elapsed < msPerHour) {
-         return Math.round(elapsed/msPerMinute) + ' minutes ago';
-    } else if (elapsed < msPerDay ) {
-         return Math.round(elapsed/msPerHour ) + ' hours ago';
-    } else if (elapsed < msPerMonth) {
-         return 'approximately ' + Math.round(elapsed/msPerDay) + ' days ago';
-    } else if (elapsed < msPerYear) {
-         return 'approximately ' + Math.round(elapsed/msPerMonth) + ' months ago';
-    } else {
-         return 'approximately ' + Math.round(elapsed/msPerYear ) + ' years ago';
-    }
-}
-
-// Timer base code taken from http://stackoverflow.com/a/11876480/172690
-window.onload = function() {
-    var fileTime = new Date(1421526084000);
-	var ctr = document.getElementById("counter");
-
-    function incrementCounter() {
-		var nowTime = new Date();
-		var relTime = timeDifference(nowTime, fileTime)
-		ctr.innerHTML = relTime;
-		// Update ourselves in the future, every five seconds.
-		setTimeout(incrementCounter, 5000);
-    }
-
-    incrementCounter();
-}
-</script>
-
 </html>

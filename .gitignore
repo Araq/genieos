@@ -3,6 +3,11 @@
 nimcache/
 
 # Absolute paths.
+/LICENSE.html
+/README.html
+/docindex.html
 /genieos
+/genieos.html
+/nakefile
 /tests/
 /trash-binary/

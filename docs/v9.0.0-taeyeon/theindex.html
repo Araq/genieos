@@ -8,6 +8,11 @@
 <title>Index</title>
 <style type="text/css">
 
+body {
+  color: black;
+  background: white;
+}
+
 span.DecNumber {color: blue}
 span.BinNumber {color: blue}
 span.HexNumber {color: blue}
@@ -20,7 +25,7 @@ span.LongStringLit {color: blue}
 span.CharLit {color: blue}
 span.EscapeSequence {color: black}
 span.Operator {color: black}
-span.Punctuation {color: black}
+span.Punctation {color: black}
 span.Comment, span.LongComment {font-style:italic; color: green}
 span.RegularExpression  {color: DarkViolet}
 span.TagStart {color: DarkViolet}
@@ -239,7 +244,15 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
 <body>
 <div class="document" id="documentId">
 <h1 class="title">Index</h1>
-Modules: <a href="genieos.html">genieos</a>.<br><p /><h2>API symbols</h2>
+<p>Documents: <a href="trash-binary/README.html">trash</a>.<br><p />Modules: <a href="genieos.html">genieos</a>.<br><p /><h2>Documentation files</h2>
+<ul><li><a href="trash-binary/README.html">trash</a>
+<ul>
+<li><a href="trash-binary/README.html#toc_8">Installation and usage</a>
+<li><a href="trash-binary/README.html#toc_9">Documentation</a>
+<li><a href="trash-binary/README.html#toc_10">Benchmarks</a>
+</ul>
+</ul>
+<h2>API symbols</h2>
 <dt><span>playSound:</span></dt><ul class="simple"><dd>
 <li><a class="reference external"
           title="Tries to play a sound provided by your OS.…" href="genieos.html#playSound,">genieos : playSound*(soundType = defaultBeep): float64</a></li>
@@ -253,8 +266,55 @@ Modules: <a href="genieos.html">genieos</a>.<br><p /><h2>API symbols</h2>
 <dt><span>TSound:</span></dt><ul class="simple"><dd>
 <li><a class="reference external" href="genieos.html#TSound">genieos : TSound</a></li>
           </ul></dd>
+</p>
 
-<small>Generated: 2014-06-18 00:58:45 UTC</small>
+<small>Last modified: 2015-01-17 20:21 UTC. Local time: 2015-01-17 21:21.
+<div id="counter"></div>
+</small>
+<br>Rendered by lazy_rest 0.2.2.
 </div>
 </body>
+<script type="text/javascript">
+// Time difference code from http://stackoverflow.com/q/11479170/172690
+function timeDifference(current, previous) {
+    var msPerMinute = 60 * 1000;
+    var msPerHour = msPerMinute * 60;
+    var msPerDay = msPerHour * 24;
+    var msPerMonth = msPerDay * 30;
+    var msPerYear = msPerDay * 365;
+
+    var elapsed = current - previous;
+
+    if (elapsed < msPerMinute) {
+         return Math.round(elapsed/1000) + ' seconds ago';
+    } else if (elapsed < msPerHour) {
+         return Math.round(elapsed/msPerMinute) + ' minutes ago';
+    } else if (elapsed < msPerDay ) {
+         return Math.round(elapsed/msPerHour ) + ' hours ago';
+    } else if (elapsed < msPerMonth) {
+         return 'approximately ' + Math.round(elapsed/msPerDay) + ' days ago';
+    } else if (elapsed < msPerYear) {
+         return 'approximately ' + Math.round(elapsed/msPerMonth) + ' months ago';
+    } else {
+         return 'approximately ' + Math.round(elapsed/msPerYear ) + ' years ago';
+    }
+}
+
+// Timer base code taken from http://stackoverflow.com/a/11876480/172690
+window.onload = function() {
+    var fileTime = new Date(1421526084000);
+	var ctr = document.getElementById("counter");
+
+    function incrementCounter() {
+		var nowTime = new Date();
+		var relTime = timeDifference(nowTime, fileTime)
+		ctr.innerHTML = relTime;
+		// Update ourselves in the future, every five seconds.
+		setTimeout(incrementCounter, 5000);
+    }
+
+    incrementCounter();
+}
+</script>
+
 </html>

@@ -5,8 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Module README</title>
+<title></title>
 <style type="text/css">
+
+body {
+  color: black;
+  background: white;
+}
 
 span.DecNumber {color: blue}
 span.BinNumber {color: blue}
@@ -20,7 +25,7 @@ span.LongStringLit {color: blue}
 span.CharLit {color: blue}
 span.EscapeSequence {color: black}
 span.Operator {color: black}
-span.Punctuation {color: black}
+span.Punctation {color: black}
 span.Comment, span.LongComment {font-style:italic; color: green}
 span.RegularExpression  {color: DarkViolet}
 span.TagStart {color: DarkViolet}
@@ -238,7 +243,7 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
 </head>
 <body>
 <div class="document" id="documentId">
-<h1 class="title">Module README</h1>
+<h1 class="title"></h1>
 
 <h1 id="nimrod-genie-os-module">Nimrod genie os module</h1><p><a class="reference external" href="http://nimrod-lang.org">Nimrod</a> provides the <a class="reference external" href="http://nimrod-lang.org/os.html">os module</a> with OS related procs to manage files among other things. But this is really just basic POSIX stuff, and nowadays OSes have things like recycle bins and speakers to play sounds.  However, these kind of procs are not very cross platform and some people wouldn't like them in the base os module.</p>
 <p>So here's my answer, <strong>genieos</strong> contains several procs which are <em>too awesome</em> to be included in the standard os one. You could actually think of this module as a <em>fancy os module</em>, but if we are talking about fancy stuff, you can't get more fancy than <a class="reference external" href="http://en.wikipedia.org/wiki/Girls'_Generation">Girls' Generation 소녀시대</a>, also known as <a class="reference external" href="http://www.youtube.com/watch?v=EOWrdo1kVYw">Sonyeo Shidae</a> or <a class="reference external" href="http://www.youtube.com/watch?v=fYP_3QEb5Yk">SNSD</a>. Just <a class="reference external" href="http://www.youtube.com/watch?v=6SwiSpudKWI">tell them your wish</a>, you never know what this module could do for you (hey, <a class="reference external" href="https://soundcloud.com/randommixchannel/luckygenie">it even remixes well!</a>).</p>
@@ -280,9 +285,53 @@ $ open docindex.html</pre>
 
 <h1 id="feedback">Feedback</h1><p>You can send me feedback through <a class="reference external" href="https://github.com/gradha/genieos/issues">github's issue tracker</a>. I also take a look from time to time to <a class="reference external" href="http://forum.nimrod-lang.org">Nimrod's forums</a> where you can talk to other <em>more serious</em> nimrod programmers. </p>
 
-
-
-<small>Generated: 2014-06-18 00:58:47 UTC</small>
+<small>Last modified: 2015-01-17 20:21 UTC. Local time: 2015-01-17 21:21.
+<div id="counter"></div>
+</small>
+<br>Rendered by lazy_rest 0.2.2.
 </div>
 </body>
+<script type="text/javascript">
+// Time difference code from http://stackoverflow.com/q/11479170/172690
+function timeDifference(current, previous) {
+    var msPerMinute = 60 * 1000;
+    var msPerHour = msPerMinute * 60;
+    var msPerDay = msPerHour * 24;
+    var msPerMonth = msPerDay * 30;
+    var msPerYear = msPerDay * 365;
+
+    var elapsed = current - previous;
+
+    if (elapsed < msPerMinute) {
+         return Math.round(elapsed/1000) + ' seconds ago';
+    } else if (elapsed < msPerHour) {
+         return Math.round(elapsed/msPerMinute) + ' minutes ago';
+    } else if (elapsed < msPerDay ) {
+         return Math.round(elapsed/msPerHour ) + ' hours ago';
+    } else if (elapsed < msPerMonth) {
+         return 'approximately ' + Math.round(elapsed/msPerDay) + ' days ago';
+    } else if (elapsed < msPerYear) {
+         return 'approximately ' + Math.round(elapsed/msPerMonth) + ' months ago';
+    } else {
+         return 'approximately ' + Math.round(elapsed/msPerYear ) + ' years ago';
+    }
+}
+
+// Timer base code taken from http://stackoverflow.com/a/11876480/172690
+window.onload = function() {
+    var fileTime = new Date(1421526084000);
+	var ctr = document.getElementById("counter");
+
+    function incrementCounter() {
+		var nowTime = new Date();
+		var relTime = timeDifference(nowTime, fileTime)
+		ctr.innerHTML = relTime;
+		// Update ourselves in the future, every five seconds.
+		setTimeout(incrementCounter, 5000);
+    }
+
+    incrementCounter();
+}
+</script>
+
 </html>
