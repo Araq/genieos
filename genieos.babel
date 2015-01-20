@@ -22,4 +22,11 @@ trash-binary/trash.nim
 """
 
 [Deps]
-Requires: "nake >= 1.0,argument_parser >= 0.1.2, x11 >= 1.0"
+Requires: """
+
+nake >= 1.0
+argument_parser >= 0.1.2
+x11 >= 1.0
+https://github.com/gradha/badger_bits.git >= 0.2.4
+
+"""
