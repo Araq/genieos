@@ -24,10 +24,10 @@ can use `the ultimate packer for executables <http://upx.sourceforge.net>`_
 like ``upx --best trash`` to reduce it further to about 52KB. Oh, I nearly
 forgot.  For commandline parsing this command uses the `argument_parser module
 <https://github.com/gradha/argument_parser>`_) which you previously have to
-install through `Nimrod's babel package manager
-<https://github.com/nimrod-code/babel>`_ typing::
+install through `Nim's Nimble package manager
+<https://github.com/nim-lang/nimble>`_ typing::
 
-    babel install argument_parser
+    nimble install argument_parser
 
 
 Documentation

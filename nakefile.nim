@@ -1,23 +1,23 @@
-import bb_nake, bb_os, times, osproc
+import bb_nake, bb_os, times, osproc, sequtils
 
 let
   modules = @["genieos"]
-  rst_files = @["docs"/"CHANGES", "docs"/"release_steps",
-    "trash-binary"/"README", "LICENSE", "README", "docindex"]
+  rst_files = concat(glob("*.rst"), glob("docs"/"*rst"),
+    glob("trash-binary"/"*.rst"))
 
-proc babel_install() =
-  direshell("babel install -y")
+proc nimble_install() =
+  direshell("nimble install -y")
   echo "Now you can 'import genieos' and wait for a wish."
 
 iterator all_rst_files(): tuple[src, dest: string] =
   for rst_name in rst_files:
     var r: tuple[src, dest: string]
-    r.src = rst_name & ".rst"
-    # Ignore files if they don't exist, babel version misses some.
+    r.src = rst_name
+    # Ignore files if they don't exist, nimble version misses some.
     if not r.src.existsFile:
       echo "Ignoring missing ", r.src
       continue
-    r.dest = rst_name & ".html"
+    r.dest = rst_name.change_file_ext("html")
     yield r
 
 
@@ -50,6 +50,7 @@ proc validate_rst() =
       echo "Failed python processing of " & rst_file
       echo output
 
-task "babel", "Uses babel to install genieos locally": babel_install()
+task "install", "Uses nimble to install locally": nimble_install()
+task "i", "Alias for install": nimble_install()
 task "doc", "Generates export API docs for for the modules": doc()
 task "check_doc", "Validates rst format for some docs": validate_rst()

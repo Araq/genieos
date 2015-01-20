@@ -41,29 +41,29 @@ configuration files <http://nimrod-lang.org/nimrodc.html#configuration-files>`_
 feature to specify their path. But that would be really raw, like asking
 `Jessica <http://en.wikipedia.org/wiki/Jessica_Jung>`_ to eat a cucumber (`she
 dislikes them! <http://www.youtube.com/watch?v=TUR7CuD_1zQ>`_). So you can use
-`Nimrod's babel package manager <https://github.com/nimrod-code/babel>`_ and
+`Nim's Nimble package manager <https://github.com/nim-lang/nimble>`_ and
 type::
 
-    babel update
-    babel install genieos
+    nimble update
+    nimble install genieos
 
 
 Development version
 -------------------
 
-Use `Nimrod's babel package manager <https://github.com/nimrod-code/babel>`_ to
+Use `Nim's Nimble package manager <https://github.com/nim-lang/nimble>`_ to
 install locally the github checkout::
 
-    $ babel update
+    $ nimble update
     $ git clone https://github.com/gradha/genieos.git
     $ cd genieos
-    $ babel install -y
+    $ nimble install -y
 
-Alternatively you can use the following syntax to ask babel to install the
+Alternatively you can use the following syntax to ask Nimble to install the
 development version::
 
-    $ babel update
-    $ babel install -y genieos#head
+    $ nimble update
+    $ nimble install -y genieos@#head
 
 Usage
 =====
@@ -80,7 +80,7 @@ The genieos module comes with embedded docstrings.  `Sooyoung
 `nakefile task <https://github.com/fowlmouth/nake>`_ to obtain the HTML
 reference file with instructions on the exported symbols. Unix example::
 
-    $ cd `babel path genieos`
+    $ cd `nimble path genieos`
     $ nake doc
     $ open docindex.html
 

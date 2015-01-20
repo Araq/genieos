@@ -13,7 +13,7 @@ What to do for a new public release of genieos?
 
   * Modify `../README.rst <../README.rst>`_.
   * Modify `../genieos.nim <../genieos.nim>`_.
-  * Modify `../genieos.babel <../genieos.babel>`_.
+  * Modify `../genieos.nimble <../genieos.nimble>`_.
   * Update `CHANGES.rst <CHANGES.rst>`_ with list of changes and
     version/number.
 
@@ -29,7 +29,7 @@ What to do for a new public release of genieos?
 
   * Modify `../README.rst <../README.rst>`_.
   * Modify `../genieos.nim <../genieos.nim>`_.
-  * Modify `../genieos.babel <../genieos.babel>`_.
+  * Modify `../genieos.nimble <../genieos.nimble>`_.
   * Update `CHANGES.rst <CHANGES.rst>`_ development version with unknown date.
 
 * ``git commit -av`` into master with *Bumps version numbers for development
