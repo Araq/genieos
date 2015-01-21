@@ -13,7 +13,7 @@ What to do for a new public release of genieos?
 
   * Modify `../README.rst <../README.rst>`_.
   * Modify `../genieos.nim <../genieos.nim>`_.
-  * Modify `../genieos.babel <../genieos.babel>`_.
+  * Modify `../genieos.nimble <../genieos.nimble>`_.
   * Update `CHANGES.rst <CHANGES.rst>`_ with list of changes and
     version/number.
 
@@ -29,7 +29,7 @@ What to do for a new public release of genieos?
 
   * Modify `../README.rst <../README.rst>`_.
   * Modify `../genieos.nim <../genieos.nim>`_.
-  * Modify `../genieos.babel <../genieos.babel>`_.
+  * Modify `../genieos.nimble <../genieos.nimble>`_.
   * Update `CHANGES.rst <CHANGES.rst>`_ development version with unknown date.
 
 * ``git commit -av`` into master with *Bumps version numbers for development
@@ -39,5 +39,5 @@ What to do for a new public release of genieos?
 * Check out ``gh-pages`` branch and run update script.
 * Add to the index.html the link of the new version along with files.
 * Push docs.
-* Announce at http://forum.nimrod-code.org/t/143.
+* Announce at http://forum.nim-lang.org/t/143.
 * Close the milestone on github.

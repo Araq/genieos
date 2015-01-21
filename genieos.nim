@@ -1,10 +1,10 @@
-## Too awesome procs to be included in nimrod.os module.
+## Too awesome procs to be included in Nim's os module.
 ##
 ## This module contains several procs which are *too awesome* to be included in
-## `Nimrod's <http://nimrod-code.org>`_ `os module
-## <http://nimrod-code.org/os.html>`_. Procs may not be available for your
-## platform, please check their availability at compile time with ``when``.
-## Example checking for the availability of the ``recycle`` proc:
+## `Nim's <http://nim-lang.org>`_ `os module <http://nim-lang.org/os.html>`_.
+## Procs may not be available for your platform, please check their
+## availability at compile time with ``when``.  Example checking for the
+## availability of the ``recycle`` proc:
 ##
 ## .. code-block:: Nimrod
 ##   when not defined(genieos.recycle):
@@ -24,8 +24,7 @@ type
     defaultBeep, recycleBin
 
 const
-  VERSION_STR* = "9.4.1" ## Module version as a string.
-  VERSION_INT* = (major: 9, minor: 4, maintenance: 1) ## \
+  version_int* = (major: 9, minor: 4, maintenance: 1) ## \
   ## Module version as an integer tuple.
   ##
   ## Major versions changes mean a break in API backwards compatibility, either
@@ -38,7 +37,11 @@ const
   ## Maintenance version changes mean I'm not perfect yet despite all the kpop
   ## I watch.
 
-# Here comes the nimrod block which declares the interface. It is only active
+  version_str* = ($version_int.major & "." & $version_int.minor & "." &
+      $version_int.maintenance) ## \
+    ## Module version as a string. Something like ``1.9.2``.
+
+# Here comes the nimdoc block which declares the interface. It is only active
 # during documentation generation to avoid compilation issues when something is
 # not defined.
 when defined(nimdoc):
@@ -95,7 +98,7 @@ when defined(nimdoc):
 
 when defined(macosx):
   {.passL: "-framework AppKit".}
-  {.compile: "private/genieos_macosx.m".}
+  {.compile: "genieos_pkg/genieos_macosx.m".}
   proc genieosMacosxNimRecycle(filename: cstring): int {.importc, nodecl.}
   proc genieosMacosxBeep() {.importc, nodecl.}
   proc genieosMacosxPlayAif(filename: cstring): cdouble {.importc.}
@@ -126,7 +129,8 @@ when defined(macosx):
   proc recycle*(filename: string) =
     let result = genieosMacosxNimRecycle(filename)
     if result != 0:
-      OSError("error " & $result & " recycling " & filename)
+      raise new_exception(OSError,
+        "error " & $result & " recycling " & filename)
 
   proc get_clipboard_string*(): string =
     let cresult = genieosMacosxClipboardString()

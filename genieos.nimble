@@ -2,7 +2,7 @@
 name          = "genieos"
 version       = "9.4.1"
 author        = "Grzegorz Adam Hankiewicz"
-description   = """Too awesome procs to be included in nimrod.os module."""
+description   = """Too awesome procs to be included in Nim's os module."""
 license       = "MIT"
 #bin           = "trash-binary/trash"
 
@@ -13,13 +13,18 @@ README.rst
 docindex.rst
 docs/CHANGES.rst
 genieos.nim
+genieos_pkg/genieos_macosx.m
 nakefile.nim
-private/genieos_macosx.m
 trash-binary/README.rst
-trash-binary/nimrod.cfg
 trash-binary/trash.nim
+trash-binary/trash.nimble
+trash-binary/trash.nimrod.cfg
 
 """
 
 [Deps]
-Requires: "nake >= 1.0,argument_parser >= 0.1.2, x11 >= 1.0"
+Requires: """
+
+x11 >= 1.0
+
+"""
