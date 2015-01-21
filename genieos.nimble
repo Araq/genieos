@@ -16,17 +16,15 @@ genieos.nim
 nakefile.nim
 private/genieos_macosx.m
 trash-binary/README.rst
-trash-binary/nimrod.cfg
 trash-binary/trash.nim
+trash-binary/trash.nimble
+trash-binary/trash.nimrod.cfg
 
 """
 
 [Deps]
 Requires: """
 
-nake >= 1.0
-argument_parser >= 0.1.2
 x11 >= 1.0
-https://github.com/gradha/badger_bits.git >= 0.2.4
 
 """
