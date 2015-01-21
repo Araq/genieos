@@ -24,8 +24,7 @@ type
     defaultBeep, recycleBin
 
 const
-  VERSION_STR* = "9.4.1" ## Module version as a string.
-  VERSION_INT* = (major: 9, minor: 4, maintenance: 1) ## \
+  version_int* = (major: 9, minor: 4, maintenance: 1) ## \
   ## Module version as an integer tuple.
   ##
   ## Major versions changes mean a break in API backwards compatibility, either
@@ -37,6 +36,10 @@ const
   ##
   ## Maintenance version changes mean I'm not perfect yet despite all the kpop
   ## I watch.
+
+  version_str* = ($version_int.major & "." & $version_int.minor & "." &
+      $version_int.maintenance) ## \
+    ## Module version as a string. Something like ``1.9.2``.
 
 # Here comes the nimrod block which declares the interface. It is only active
 # during documentation generation to avoid compilation issues when something is
@@ -126,7 +129,8 @@ when defined(macosx):
   proc recycle*(filename: string) =
     let result = genieosMacosxNimRecycle(filename)
     if result != 0:
-      OSError("error " & $result & " recycling " & filename)
+      raise new_exception(OSError,
+        "error " & $result & " recycling " & filename)
 
   proc get_clipboard_string*(): string =
     let cresult = genieosMacosxClipboardString()
