@@ -1,10 +1,10 @@
-## Too awesome procs to be included in nimrod.os module.
+## Too awesome procs to be included in Nim's os module.
 ##
 ## This module contains several procs which are *too awesome* to be included in
-## `Nimrod's <http://nimrod-code.org>`_ `os module
-## <http://nimrod-code.org/os.html>`_. Procs may not be available for your
-## platform, please check their availability at compile time with ``when``.
-## Example checking for the availability of the ``recycle`` proc:
+## `Nim's <http://nim-lang.org>`_ `os module <http://nim-lang.org/os.html>`_.
+## Procs may not be available for your platform, please check their
+## availability at compile time with ``when``.  Example checking for the
+## availability of the ``recycle`` proc:
 ##
 ## .. code-block:: Nimrod
 ##   when not defined(genieos.recycle):
@@ -41,7 +41,7 @@ const
       $version_int.maintenance) ## \
     ## Module version as a string. Something like ``1.9.2``.
 
-# Here comes the nimrod block which declares the interface. It is only active
+# Here comes the nimdoc block which declares the interface. It is only active
 # during documentation generation to avoid compilation issues when something is
 # not defined.
 when defined(nimdoc):

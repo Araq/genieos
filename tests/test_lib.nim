@@ -27,9 +27,9 @@ proc poll_clipboard() =
 proc test_change_clipboard() =
   let
     first_change = get_clipboard_change_timestamp()
-    input_string = "Nimrod is awesome!"
+    input_string = "Nim is awesome!"
 
-  set_clipboard("Nimrod is awesome!")
+  set_clipboard("Nim is awesome!")
   assert get_clipboard_change_timestamp() != first_change
   let readback_string = get_clipboard_string()
   assert readback_string == input_string

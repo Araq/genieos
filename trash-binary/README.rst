@@ -5,7 +5,7 @@ genieos trash command
 No, no, not that this is trash. As `Hyoyeon
 <http://en.wikipedia.org/wiki/Kim_Hyo-yeon>`_ correctly points out, this is
 just a MacOSX command line tool using `the genieos module <../genieos.nim>`_
-for the `Nimrod programming language <http://nimrod-lang.org>`_. This tool can
+for the `Nim programming language <http://nim-lang.org>`_. This tool can
 be used instead of the typical ``rm`` command found on many Unix systems, and
 instead of vanishing your files it will move them to the recycle bin, even
 making the Dock's recycle bin sound (you can optionally disable this).
@@ -48,7 +48,7 @@ MacOSX programs with similar functionality: `rmtrash
 <https://github.com/albertz/helpers/blob/master/rm-trash.py>`_ and `osx-trash
 <http://www.dribin.org/dave/osx-trash/>`_.
 
-Let's run our nimrod binary to set as baseline::
+Let's run our Nim binary to set as baseline::
 
     [0:gradha@amber.local:0] [/tmp]$ time (touch 1.delete; \
         mkdir 2.delete; trash ?.delete)
@@ -74,7 +74,7 @@ Ugh, so it takes nearly three times as long. OK, let's try the Python version::
     user	0m0.183s
     sys	0m0.097s
 
-That's more like it, improving over our own nimrod version! For completeness
+That's more like it, improving over our own Nim version! For completeness
 let's run the Objective-C implementation, which should be the fastest one,
 given that we are trying to execute an Objective-C/Cocoa API here::
 
@@ -87,7 +87,7 @@ given that we are trying to execute an Objective-C/Cocoa API here::
 Yay, impressive performance. But wait a sec, I was listening to
 `Yoona <http://en.wikipedia.org/wiki/Im_Yoona>`_ singing a solo and noticed a
 lack of sounds over her beautiful voice! If you repeat these commands on your
-machine you should hear the ruby and nimrod version triggering the recycle bin
+machine you should hear the Ruby and Nim version triggering the recycle bin
 sound but not so for the Objective-C or Python version.
 
 Oh, look at this, if you actually read their implementation they are **not
@@ -111,7 +111,7 @@ with the silent ``-s`` parameter::
     sys	0m0.026s
 
 Ah, that's much better. Without producing the sound (and waiting for it to play
-back) the nimrod version goes under 100ms, much closer to the 77ms of the
+back) the Nim version goes under 100ms, much closer to the 77ms of the
 cheating Objective-C version. **UPDATE:** after `implementing sound playback in
 the background <https://github.com/gradha/genieos/issues/2>`_ the normal
 command returns much faster to the foreground, but the external process spawn
@@ -119,5 +119,5 @@ still takes some milliseconds.
 
 OK, that's it. I won't be running this benchmarks in any way or form in the
 future since that could generate different results due to the CPU load of my
-machine and break my happiness. Simply sleep better knowing `Nimrod is
-awesome <http://nimrod-lang.org>`_.
+machine and break my happiness. Simply sleep better knowing `Nim is
+awesome <http://nim-lang.org>`_.

@@ -1,9 +1,9 @@
-=====================
-Nimrod genieos module
-=====================
+==================
+Nim genieos module
+==================
 
-`Nimrod <http://nimrod-lang.org>`_ provides the `os module
-<http://nimrod-lang.org/os.html>`_ with OS related procs to manage files among
+`Nim <http://nim-lang.org>`_ provides the `os module
+<http://nim-lang.org/os.html>`_ with OS related procs to manage files among
 other things. But this is really just basic POSIX stuff, and nowadays OSes have
 things like recycle bins and speakers to play sounds.  However, these kind of
 procs are not very cross platform and some people wouldn't like them in the
@@ -36,8 +36,8 @@ Stable version
 --------------
 
 You could copy the `genieos.nim <genieos.nim>`_ file and `private <private>`_
-directory to your project or put these somewhere safe and use `nimrod's
-configuration files <http://nimrod-lang.org/nimrodc.html#configuration-files>`_
+directory to your project or put these somewhere safe and use `Nim's
+configuration files <http://nim-lang.org/nimc.html#configuration-files>`_
 feature to specify their path. But that would be really raw, like asking
 `Jessica <http://en.wikipedia.org/wiki/Jessica_Jung>`_ to eat a cucumber (`she
 dislikes them! <http://www.youtube.com/watch?v=TUR7CuD_1zQ>`_). So you can use
@@ -75,20 +75,10 @@ and access the exported procs.
 Documentation
 =============
 
-The genieos module comes with embedded docstrings.  `Sooyoung
-<http://en.wikipedia.org/wiki/Sooyoung>`_ recommends you to run the ``doc``
-`nakefile task <https://github.com/fowlmouth/nake>`_ to obtain the HTML
-reference file with instructions on the exported symbols. Unix example::
-
-    $ cd `nimble path genieos`
-    $ nake doc
-    $ open docindex.html
-
-The `docindex file <docindex.rst>`_ links all the available documentation.
-Generated documentation for all public API versions can also be found at
-`http://gradha.github.io/genieos/ <http://gradha.github.io/genieos/>`_.  No
-guarantees on its freshness, though, do check the generation date at the
-bottom.
+The ``genieos`` module comes with embedded docstrings.  `Sooyoung
+<http://en.wikipedia.org/wiki/Sooyoung>`_ recommends you to go to
+`http://gradha.github.io/genieos/ <http://gradha.github.io/genieos/>`_, there
+you will find the generated documentation for all public API versions.
 
 
 Extra binaries
@@ -130,5 +120,5 @@ Feedback
 
 You can send me feedback through `github's issue tracker
 <https://github.com/gradha/genieos/issues>`_. I also take a look from time to
-time to `Nimrod's forums <http://forum.nimrod-lang.org>`_ where you can talk to
-other *more serious* nimrod programmers.
+time to `Nim's forums <http://forum.nim-lang.org>`_ where you can talk to other
+*more serious* Nim programmers.
