@@ -4,6 +4,7 @@ const
   PARAM_SILENT = @["-s", "--silent"]
   PARAM_SOUND = @["-S", "--sound"]
   PARAM_VERBOSE = @["-v", "--verbose"]
+  PARAM_VERSION = @["-V", "--version"]
   PARAM_HELP = @["-h", "--help"]
 
 
@@ -15,6 +16,8 @@ proc process_commandline(): Tcommandline_results =
   var params: seq[Tparameter_specification] = @[]
   params.add(new_parameter_specification(names = PARAM_VERBOSE,
     help_text = "Be verbose about files being recycled"))
+  params.add(new_parameter_specification(names = PARAM_VERSION,
+    help_text = "Display version numbers and exit"))
   params.add(new_parameter_specification(names = PARAM_SOUND,
     help_text = "Plays recycle bin sound and exits"))
   params.add(new_parameter_specification(names = PARAM_HELP,
@@ -23,6 +26,12 @@ proc process_commandline(): Tcommandline_results =
     help_text = "Don't trigger OS sounds during recycle bin operations"))
 
   result = parse(params)
+
+  if result.options.hasKey(PARAM_VERSION[0]):
+    echo "Versions:"
+    echo "\tgenieos ", genieos.version_str
+    echo "\targument_parser ", argument_parser.version_str
+    quit()
 
   if result.options.hasKey(PARAM_SOUND[0]):
     return
