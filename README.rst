@@ -35,17 +35,17 @@ Installation and usage
 Stable version
 --------------
 
-You could copy the `genieos.nim <genieos.nim>`_ file and `private <private>`_
-directory to your project or put these somewhere safe and use `Nim's
-configuration files <http://nim-lang.org/nimc.html#configuration-files>`_
-feature to specify their path. But that would be really raw, like asking
-`Jessica <http://en.wikipedia.org/wiki/Jessica_Jung>`_ to eat a cucumber (`she
-dislikes them! <http://www.youtube.com/watch?v=TUR7CuD_1zQ>`_). So you can use
-`Nim's Nimble package manager <https://github.com/nim-lang/nimble>`_ and
-type::
+You could copy the `genieos.nim <genieos.nim>`_ file and `genieos_pkg
+<genieos_pkg>`_ directory to your project or put these somewhere safe and use
+`Nim's configuration files
+<http://nim-lang.org/nimc.html#configuration-files>`_ feature to specify their
+path. But that would be really raw, like asking `Jessica
+<http://en.wikipedia.org/wiki/Jessica_Jung>`_ to eat a cucumber (`she dislikes
+them! <http://www.youtube.com/watch?v=TUR7CuD_1zQ>`_). So you can use `Nim's
+Nimble package manager <https://github.com/nim-lang/nimble>`_ and type::
 
-    nimble update
-    nimble install genieos
+    $ nimble update
+    $ nimble install genieos
 
 
 Development version
@@ -60,7 +60,7 @@ install locally the github checkout::
     $ nimble install -y
 
 Alternatively you can use the following syntax to ask Nimble to install the
-development version::
+development version directly::
 
     $ nimble update
     $ nimble install -y genieos@#head
@@ -70,10 +70,6 @@ Usage
 
 Once you have installed the package you can ``import genieos`` in your programs
 and access the exported procs.
-
-
-Documentation
-=============
 
 The ``genieos`` module comes with embedded docstrings.  `Sooyoung
 <http://en.wikipedia.org/wiki/Sooyoung>`_ recommends you to go to

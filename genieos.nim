@@ -98,7 +98,7 @@ when defined(nimdoc):
 
 when defined(macosx):
   {.passL: "-framework AppKit".}
-  {.compile: "private/genieos_macosx.m".}
+  {.compile: "genieos_pkg/genieos_macosx.m".}
   proc genieosMacosxNimRecycle(filename: cstring): int {.importc, nodecl.}
   proc genieosMacosxBeep() {.importc, nodecl.}
   proc genieosMacosxPlayAif(filename: cstring): cdouble {.importc.}

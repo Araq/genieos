@@ -13,8 +13,8 @@ README.rst
 docindex.rst
 docs/CHANGES.rst
 genieos.nim
+genieos_pkg/genieos_macosx.m
 nakefile.nim
-private/genieos_macosx.m
 trash-binary/README.rst
 trash-binary/trash.nim
 trash-binary/trash.nimble
