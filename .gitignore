@@ -1,4 +1,5 @@
 # Global patterns
+*.exe
 *.swp
 *.todelete
 .DS_Store
@@ -14,6 +15,5 @@ nimcache/
 /genieos.html
 /nakefile
 /recycle
-/tests/test_lib
 /trash-binary/README.html
 /trash-binary/trash
