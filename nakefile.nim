@@ -50,7 +50,11 @@ proc validate_rst() =
       echo "Failed python processing of " & rst_file
       echo output
 
+proc run_tests() =
+  run_test_subdirectories("tests")
+
 task "install", "Uses nimble to install locally": nimble_install()
 task "i", "Alias for install": nimble_install()
 task "doc", "Generates export API docs for for the modules": doc()
 task "check_doc", "Validates rst format for some docs": validate_rst()
+task "test", "Runs unit tests": run_tests()

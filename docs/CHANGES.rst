@@ -11,6 +11,8 @@ v9.4.1 ??? ????-??-??
   <https://github.com/gradha/genieos/issues/18>`_.
 * `Updated Nimrod references and fixed for 0.10.2
   <https://github.com/gradha/genieos/issues/20>`_.
+* `Added unit testing of OSX clipboard functionality
+  <https://github.com/gradha/genieos/issues/15>`_.
 
 v9.4.0 `Tiffany <https://en.wikipedia.org/wiki/Tiffany_(South_Korean_singer)>`_ 2014-05-05
 ------------------------------------------------------------------------------------------

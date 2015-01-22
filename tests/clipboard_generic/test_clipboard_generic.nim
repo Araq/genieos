@@ -1,15 +1,6 @@
-## Tests genieos module procs.
+# Tests genieos module procs.
 
-import genieos, strutils, os
-
-proc test_recycle() =
-  var filename : string
-
-  echo "Creating thousand directories to later recycle them."
-  for f in 0..999:
-    filename = "onetest$1.todelete" % $f
-    createDir filename
-    recycle filename
+import genieos, os
 
 proc test_clipboard() =
   let text = get_clipboard_string()
@@ -40,5 +31,4 @@ when isMainModule:
   test_clipboard()
   #poll_clipboard()
   test_change_clipboard()
-  test_recycle()
   echo "All tests done!"
