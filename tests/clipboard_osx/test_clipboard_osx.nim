@@ -3,7 +3,7 @@
 # This will overwrite the current clipboard contents using pbcopy.
 
 import
-  genieos, strutils, os, math
+  genieos, os, math
 
 
 const temp_file = "clipboard_payload.txt"
