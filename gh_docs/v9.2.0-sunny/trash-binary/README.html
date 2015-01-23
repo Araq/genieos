@@ -297,7 +297,7 @@ sys	0m0.026s</pre>
 <p>Ah, that's much better. Without producing the sound (and waiting for it to play back) the nimrod version goes under 100ms, much closer to the 77ms of the cheating objc version. <strong>UPDATE:</strong> after <a class="reference external" href="https://github.com/gradha/genieos/issues/2">implementing sound playback in the background</a> the normal command returns much faster to the foreground, but the external process spawn still takes some milliseconds.</p>
 <p>Ok, that's it. I won't be running this benchmarks in any way or form in the future since that could generate different results due to the CPU load of my machine and break my happiness. Simply sleep better knowing <a class="reference external" href="http://nimrod-lang.org">Nimrod is awesome</a>. </p>
 
-<small>Last modified: 2015-01-17 20:21 UTC. Local time: 2015-01-17 21:21.
+<small>Last modified: 2015-01-23 22:57 UTC. Local time: 2015-01-23 23:57.
 <div id="counter"></div>
 </small>
 <br>Rendered by lazy_rest 0.2.2.
@@ -331,7 +331,7 @@ function timeDifference(current, previous) {
 
 // Timer base code taken from http://stackoverflow.com/a/11876480/172690
 window.onload = function() {
-    var fileTime = new Date(1421526084000);
+    var fileTime = new Date(1422053859000);
 	var ctr = document.getElementById("counter");
 
     function incrementCounter() {

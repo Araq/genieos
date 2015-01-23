@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>What to do for a new public release of genieos?</title>
+<title>genieos release steps</title>
 <style type="text/css">
 
 body {
@@ -243,37 +243,38 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
 </head>
 <body>
 <div class="document" id="documentId">
-<h1 class="title">What to do for a new public release of genieos?</h1>
+<h1 class="title">genieos release steps</h1>
 <ul class="simple"><li>Create new milestone with version number (vXXX-singer) at <a class="reference external" href="https://github.com/gradha/genieos/issues/milestones/">https://github.com/gradha/genieos/issues/milestones/</a>. Include in the milestone description: &quot;In honour of singer-url&quot;.</li>
 <li>Create new release issue <em>Release versionname</em> and assign to that milestone. Repeat link in issue description.</li>
-<li>git flow release start versionname (versionname without v but including SNSD member, like <tt class="docutils literal"><span class="pre">9.1.2-sunny</span></tt>).</li>
+<li><tt class="docutils literal"><span class="pre">git flow release start versionname</span></tt> (versionname without v but including SNSD member, like <tt class="docutils literal"><span class="pre">9.1.2-sunny</span></tt>).</li>
 <li>Update version numbers:<ul class="simple"><li>Modify <a class="reference external" href="../README.html">../README.rst</a>.</li>
 <li>Modify <a class="reference external" href="../genieos.nim">../genieos.nim</a>.</li>
-<li>Modify <a class="reference external" href="../genieos.babel">../genieos.babel</a>.</li>
+<li>Modify <a class="reference external" href="../genieos.nimble">../genieos.nimble</a>.</li>
 <li>Update <a class="reference external" href="CHANGES.html">CHANGES.rst</a> with list of changes and version/number.</li>
 </ul>
 </li>
 <li><tt class="docutils literal"><span class="pre">git commit -av</span></tt> into the release branch the version number changes.</li>
-<li><tt class="docutils literal"><span class="pre">git flow release finish versionname</span></tt> (the tagname is versionname without v but including SNSD member, like <tt class="docutils literal"><span class="pre">9.1.2-sunny</span></tt>). When specifying the tag message, copy and paste a text version of the changes log into the message. Add rst item markers.</li>
+<li><tt class="docutils literal"><span class="pre">git flow release finish versionname</span></tt> (the tagname is versionname without <tt class="docutils literal"><span class="pre">v</span></tt> but including SNSD member, like <tt class="docutils literal"><span class="pre">9.1.2-sunny</span></tt>). When specifying the tag message, copy and paste a text version of the changes log into the message.  Add text item markers.</li>
 <li>Move closed issues to the release milestone.</li>
-<li><tt class="docutils literal"><span class="pre">git push origin master stable --tags</span></tt>.</li>
 <li>Increase version const number in main module, at least maintenance (stable version + 0.0.1):<ul class="simple"><li>Modify <a class="reference external" href="../README.html">../README.rst</a>.</li>
 <li>Modify <a class="reference external" href="../genieos.nim">../genieos.nim</a>.</li>
-<li>Modify <a class="reference external" href="../genieos.babel">../genieos.babel</a>.</li>
+<li>Modify <a class="reference external" href="../genieos.nimble">../genieos.nimble</a>.</li>
 <li>Update <a class="reference external" href="CHANGES.html">CHANGES.rst</a> development version with unknown date.</li>
 </ul>
 </li>
-<li><tt class="docutils literal"><span class="pre">git commit -av</span></tt> into master with <em>Bumps version numbers for development version. Refs #release issue</em>.</li>
-<li><tt class="docutils literal"><span class="pre">git push origin master stable --tags</span></tt>.</li>
+<li><tt class="docutils literal"><span class="pre">git commit -av</span></tt> into master with <cite>Bumps version numbers for development version. Refs #release issue</cite>.</li>
+<li>Regenerate static website.<ul class="simple"><li>Make sure git doesn't show changes, then run <tt class="docutils literal"><span class="pre">nake web</span></tt> and review.</li>
+<li><tt class="docutils literal"><span class="pre">git add . &amp;&amp; git commit</span></tt>. Tag with <cite>Regenerates website. Refs #release_issue</cite>.</li>
+<li><tt class="docutils literal"><span class="pre">./nakefile postweb</span></tt> to return to the previous branch. This also updates submodules, so it is easier.</li>
+</ul>
+</li>
+<li><tt class="docutils literal"><span class="pre">git push origin master stable gh-pages --tags</span></tt>.</li>
 <li>Close the release issue.</li>
-<li>Check out <tt class="docutils literal"><span class="pre">gh-pages</span></tt> branch and run update script.</li>
-<li>Add to the index.html the link of the new version along with files.</li>
-<li>Push docs.</li>
-<li>Announce at <a class="reference external" href="http://forum.nimrod-code.org/t/143">http://forum.nimrod-code.org/t/143</a>.</li>
 <li>Close the milestone on github.</li>
+<li>Announce at <a class="reference external" href="http://forum.nim-lang.org/t/143">http://forum.nim-lang.org/t/143</a>.</li>
 </ul>
 
-<small>Last modified: 2015-01-17 20:21 UTC. Local time: 2015-01-17 21:21.
+<small>Last modified: 2015-01-23 22:57 UTC. Local time: 2015-01-23 23:57.
 <div id="counter"></div>
 </small>
 <br>Rendered by lazy_rest 0.2.2.
@@ -307,7 +308,7 @@ function timeDifference(current, previous) {
 
 // Timer base code taken from http://stackoverflow.com/a/11876480/172690
 window.onload = function() {
-    var fileTime = new Date(1421526085000);
+    var fileTime = new Date(1422053860000);
 	var ctr = document.getElementById("counter");
 
     function incrementCounter() {

@@ -244,48 +244,47 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
 <body>
 <div class="document" id="documentId">
 <h1 class="title">genieos trash command</h1>
-<p>No, no, not that this is trash. As <a class="reference external" href="http://en.wikipedia.org/wiki/Kim_Hyo-yeon">Hyoyeon</a> correctly points out, this is just a MacOSX command line tool using <a class="reference external" href="../genieos.nim">the genieos module</a> for the <a class="reference external" href="http://nimrod-lang.org">Nimrod programming language</a>. This tool can be used instead of the typical <tt class="docutils literal"><span class="pre">rm</span></tt> command found on many Unix systems, and instead of vanishing your files it will move them to the recycle bin, even making the Dock's recycle bin sound (you can optionally disable this).</p>
+<p>No, no, not that this is trash. As <a class="reference external" href="http://en.wikipedia.org/wiki/Kim_Hyo-yeon">Hyoyeon</a> correctly points out, this is just a MacOSX command line tool using <a class="reference external" href="../genieos.nim">the genieos module</a> for the <a class="reference external" href="http://nim-lang.org">Nim programming language</a>. This tool can be used instead of the typical <tt class="docutils literal"><span class="pre">rm</span></tt> command found on many Unix systems, and instead of vanishing your files it will move them to the recycle bin, even making the Dock's recycle bin sound (you can optionally disable this).</p>
 
-<h1 id="installation-and-usage">Installation and usage</h1><p>If you have Nimrod and the <tt class="docutils literal"><span class="pre">genieos</span></tt> module, you can simply type:<pre>
-nimrod c -d:release trash.nim</pre>
+<h1 id="installation-and-usage">Installation and usage</h1><p>Presuming you have followed the installation instructions of the <tt class="docutils literal"><span class="pre">genieos</span></tt> module and have run <tt class="docutils literal"><span class="pre">nimble build</span></tt> inside its directory, you can run this command again inside the <tt class="docutils literal"><span class="pre">trash-binary</span></tt> directory:<pre>
+cd genieos/trash-binary
+nimble build</pre>
 </p>
-<p>This will generate a <tt class="docutils literal"><span class="pre">trash</span></tt> binary of more or less 150KB which you can put somewhere in your <tt class="docutils literal"><span class="pre">PATH</span></tt> and happily use. If you really care about size, you can use <a class="reference external" href="http://upx.sourceforge.net">the ultimate packer for executables</a> like <tt class="docutils literal"><span class="pre">upx --best trash</span></tt> to reduce it further to about 52KB. Oh, I nearly forgot.  For commandline parsing this command uses the <a class="reference external" href="https://github.com/gradha/argument_parser">argument_parser module</a>) which you previously have to install through <a class="reference external" href="https://github.com/nimrod-code/babel">Nimrod's babel package manager</a> typing:<pre>
-babel install argument_parser</pre>
-</p>
+<p>This will generate a <tt class="docutils literal"><span class="pre">trash</span></tt> binary of more or less 150KB which you can put somewhere in your <tt class="docutils literal"><span class="pre">PATH</span></tt> and happily use. If you really care about size, you can use <a class="reference external" href="http://upx.sourceforge.net">the ultimate packer for executables</a> like <tt class="docutils literal"><span class="pre">upx --best trash</span></tt> to reduce it further to about 52KB. Oh, I nearly forgot.</p>
 
 <h1 id="documentation">Documentation</h1><p>According to <a class="reference external" href="http://en.wikipedia.org/wiki/Tiffany_(South_Korean_singer)">Tiffany</a> there's not much documentation for this simple tool. You should run the command with the <tt class="docutils literal"><span class="pre">-h</span></tt> or <tt class="docutils literal"><span class="pre">--help</span></tt> parameters to see its options.</p>
 
-<h1 id="benchmarks">Benchmarks</h1><p>Because a commandline tool for moving files to the recycle bin without unscientific benchmarks would be like a day without watching <a class="reference external" href="http://en.wikipedia.org/wiki/Kwon_Yuri">Yuri</a> dance, here's a comparison to other MacOSX programs with similar functionality: <a class="reference external" href="http://www.nightproductions.net/cli.htm">rmtrash</a>, <a class="reference external" href="https://github.com/albertz/helpers/blob/master/rm-trash.py">rm-trash.py</a> and <a class="reference external" href="http://www.dribin.org/dave/osx-trash/">osx-trash</a>.</p>
-<p>Let's run our nimrod binary to set as baseline:<pre>
+<h1 id="benchmarks">Benchmarks</h1><p>Because a command line tool for moving files to the recycle bin without unscientific benchmarks would be like a day without watching <a class="reference external" href="http://en.wikipedia.org/wiki/Kwon_Yuri">Yuri</a> dance, here's a comparison to other MacOSX programs with similar functionality: <a class="reference external" href="http://www.nightproductions.net/cli.htm">rmtrash</a>, <a class="reference external" href="https://github.com/albertz/helpers/blob/master/rm-trash.py">rm-trash.py</a> and <a class="reference external" href="http://www.dribin.org/dave/osx-trash/">osx-trash</a>.</p>
+<p>Let's run our Nim binary to set as baseline:<pre>
 [0:gradha@amber.local:0] [/tmp]$ time (touch 1.delete; \
     mkdir 2.delete; trash ?.delete)
 real	0m0.980s
 user	0m0.076s
 sys	0m0.060s</pre>
 </p>
-<p>Huh, so nearly a second to remove one file and a directory. Let's see how the Ruby script performs (Ruby's osx-trash package provides a <em>binary</em> with the same <tt class="docutils literal"><span class="pre">trash</span></tt> name so I only renamed it, no hard feelings):<pre>
+<p>Huh, so nearly a second to remove one file and a directory. Let's see how the Ruby script performs (Ruby's <tt class="docutils literal"><span class="pre">osx-trash</span></tt> package provides a <em>binary</em> with the same <tt class="docutils literal"><span class="pre">trash</span></tt> name so I only renamed it, no hard feelings):<pre>
 [0:gradha@amber.local:0] [/tmp]$ time (touch 1.delete; \
     mkdir 2.delete; rubytrash ?.delete)
 real	0m2.678s
 user	0m0.665s
 sys	0m0.174s</pre>
 </p>
-<p>Ugh, so it takes nearly three times as long. Ok, let's try the python version:<pre>
+<p>Ugh, so it takes nearly three times as long. OK, let's try the Python version:<pre>
 [0:gradha@amber.local:0] [/tmp]$ time (touch 1.delete; \
     mkdir 2.delete; ./rm-trash.py ?.delete)
 real	0m0.636s
 user	0m0.183s
 sys	0m0.097s</pre>
 </p>
-<p>That's more like it, improving over our own nimrod version! For completeness let's run the objc implementation, which should be the fastest one, given that we are trying to execute an objc/Cocoa API here:<pre>
+<p>That's more like it, improving over our own Nim version! For completeness let's run the Objective-C implementation, which should be the fastest one, given that we are trying to execute an Objective-C/Cocoa API here:<pre>
 [0:gradha@amber.local:0] [/tmp]$ time (touch 1.delete; \
     mkdir 2.delete; ./rmtrash ?.delete)
 real	0m0.077s
 user	0m0.011s
 sys	0m0.012s</pre>
 </p>
-<p>Yay, impressive performance. But wait a sec, I was listening to <a class="reference external" href="http://en.wikipedia.org/wiki/Im_Yoona">Yoona</a> singing a solo and noticed a lack of sounds over her beautiful voice! If you repeat these commands on your machine you should hear the ruby and nimrod version triggering the recycle bin sound but not so for the objc or python version.</p>
-<p>Oh, look at this, if you actually read their implementation they are <strong>not using</strong> the proper recycle bin API, instead <tt class="docutils literal"><span class="pre">rm-trash</span></tt> is simply moving the files to the path where the MacOSX recycle bin just happens to be located, which is presumably bad and prone to breakage and doesn't trigger the user-friendly sound confirming the action. The python script is calling an objc API, but that API <cite>FSPathMoveObjectToTrashSync</cite> is deprecated and doesn't trigger the sound.</p>
+<p>Yay, impressive performance. But wait a sec, I was listening to <a class="reference external" href="http://en.wikipedia.org/wiki/Im_Yoona">Yoona</a> singing a solo and noticed a lack of sounds over her beautiful voice! If you repeat these commands on your machine you should hear the Ruby and Nim version triggering the recycle bin sound but not so for the Objective-C or Python version.</p>
+<p>Oh, look at this, if you actually read their implementation they are <strong>not using</strong> the proper recycle bin API, instead <tt class="docutils literal"><span class="pre">rm-trash</span></tt> is simply moving the files to the path where the MacOSX recycle bin just happens to be located, which is presumably bad and prone to breakage and doesn't trigger the user-friendly sound confirming the action. The Python script is calling an Objective-C API, but that API <cite>FSPathMoveObjectToTrashSync</cite> is deprecated and doesn't trigger the sound.</p>
 <p>Well, that's sort of cheating. I don't want to avoid using the API like <tt class="docutils literal"><span class="pre">rm-trash</span></tt> since <a class="reference external" href="http://superuser.com/a/112586/10892">that doesn't update the .DS_Store file located in the .Trash folder</a>, but at least we can put ourselves more on equal ground by avoiding to play back the recycle bin sound with the silent <tt class="docutils literal"><span class="pre">-s</span></tt> parameter:<pre>
 [0:gradha@amber.local:0] [/tmp]$ time (touch 1.delete; \
     mkdir 2.delete; trash -s ?.delete)
@@ -293,10 +292,10 @@ real	0m0.099s
 user	0m0.058s
 sys	0m0.026s</pre>
 </p>
-<p>Ah, that's much better. Without producing the sound (and waiting for it to play back) the nimrod version goes under 100ms, much closer to the 77ms of the cheating objc version. <strong>UPDATE:</strong> after <a class="reference external" href="https://github.com/gradha/genieos/issues/2">implementing sound playback in the background</a> the normal command returns much faster to the foreground, but the external process spawn still takes some milliseconds.</p>
-<p>Ok, that's it. I won't be running this benchmarks in any way or form in the future since that could generate different results due to the CPU load of my machine and break my happiness. Simply sleep better knowing <a class="reference external" href="http://nimrod-lang.org">Nimrod is awesome</a>. </p>
+<p>Ah, that's much better. Without producing the sound (and waiting for it to play back) the Nim version goes under 100ms, much closer to the 77ms of the cheating Objective-C version. <strong>UPDATE:</strong> after <a class="reference external" href="https://github.com/gradha/genieos/issues/2">implementing sound playback in the background</a> the normal command returns much faster to the foreground, but the external process spawn still takes some milliseconds.</p>
+<p>OK, that's it. I won't be running this benchmarks in any way or form in the future since that could generate different results due to the CPU load of my machine and break my happiness. Simply sleep better knowing <a class="reference external" href="http://nim-lang.org">Nim is awesome</a>. </p>
 
-<small>Last modified: 2015-01-17 20:21 UTC. Local time: 2015-01-17 21:21.
+<small>Last modified: 2015-01-23 22:57 UTC. Local time: 2015-01-23 23:57.
 <div id="counter"></div>
 </small>
 <br>Rendered by lazy_rest 0.2.2.
@@ -330,7 +329,7 @@ function timeDifference(current, previous) {
 
 // Timer base code taken from http://stackoverflow.com/a/11876480/172690
 window.onload = function() {
-    var fileTime = new Date(1421526085000);
+    var fileTime = new Date(1422053860000);
 	var ctr = document.getElementById("counter");
 
     function incrementCounter() {

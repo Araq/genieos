@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Nimrod genieos module</title>
+<title>Nim genieos module</title>
 <style type="text/css">
 
 body {
@@ -243,48 +243,42 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
 </head>
 <body>
 <div class="document" id="documentId">
-<h1 class="title">Nimrod genieos module</h1>
-<p><a class="reference external" href="http://nimrod-lang.org">Nimrod</a> provides the <a class="reference external" href="http://nimrod-lang.org/os.html">os module</a> with OS related procs to manage files among other things. But this is really just basic POSIX stuff, and nowadays OSes have things like recycle bins and speakers to play sounds.  However, these kind of procs are not very cross platform and some people wouldn't like them in the base os module.</p>
+<h1 class="title">Nim genieos module</h1>
+<p><a class="reference external" href="http://nim-lang.org">Nim</a> provides the <a class="reference external" href="http://nim-lang.org/os.html">os module</a> with OS related procs to manage files among other things. But this is really just basic POSIX stuff, and nowadays OSes have things like recycle bins and speakers to play sounds.  However, these kind of procs are not very cross platform and some people wouldn't like them in the base os module.</p>
 <p>So here's my answer, <strong>genieos</strong> contains several procs which are <em>too awesome</em> to be included in the standard os one. You could actually think of this module as a <em>fancy os module</em>, but if we are talking about fancy stuff, you can't get more fancy than <a class="reference external" href="http://en.wikipedia.org/wiki/Girls'_Generation">Girls' Generation 소녀시대</a>, also known as <a class="reference external" href="http://www.youtube.com/watch?v=EOWrdo1kVYw">Sonyeo Shidae</a> or <a class="reference external" href="http://www.youtube.com/watch?v=fYP_3QEb5Yk">SNSD</a>. Just <a class="reference external" href="http://www.youtube.com/watch?v=6SwiSpudKWI">tell them your wish</a>, you never know what this module could do for you (hey, <a class="reference external" href="https://soundcloud.com/randommixchannel/luckygenie">it even remixes well!</a>).</p>
 
 <h1 id="license">License</h1><p><a class="reference external" href="http://en.wikipedia.org/wiki/Seohyun">Seohyun</a> says this has a <a class="reference external" href="LICENSE.html">MIT license</a>.</p>
 
 <h1 id="installation-and-usage">Installation and usage</h1>
-<h2 id="stable-version">Stable version</h2><p>You could copy the <a class="reference external" href="genieos.nim">genieos.nim</a> file and <a class="reference external" href="private">private</a> directory to your project or put these somewhere safe and use <a class="reference external" href="http://nimrod-lang.org/nimrodc.html#configuration-files">nimrod's configuration files</a> feature to specify their path. But that would be really raw, like asking <a class="reference external" href="http://en.wikipedia.org/wiki/Jessica_Jung">Jessica</a> to eat a cucumber (<a class="reference external" href="http://www.youtube.com/watch?v=TUR7CuD_1zQ">she dislikes them!</a>). So you can use <a class="reference external" href="https://github.com/nimrod-code/babel">Nimrod's babel package manager</a> and type:<pre>
-babel update
-babel install genieos</pre>
+<h2 id="stable-version">Stable version</h2><p>You could copy the <a class="reference external" href="genieos.nim">genieos.nim</a> file and <a class="reference external" href="genieos_pkg">genieos_pkg</a> directory to your project or put these somewhere safe and use <a class="reference external" href="http://nim-lang.org/nimc.html#configuration-files">Nim's configuration files</a> feature to specify their path. But that would be really raw, like asking <a class="reference external" href="http://en.wikipedia.org/wiki/Jessica_Jung">Jessica</a> to eat a cucumber (<a class="reference external" href="http://www.youtube.com/watch?v=TUR7CuD_1zQ">she dislikes them!</a>). So you can use <a class="reference external" href="https://github.com/nim-lang/nimble">Nim's Nimble package manager</a> and type:<pre>
+$ nimble update
+$ nimble install genieos</pre>
 </p>
 
-<h2 id="development-version">Development version</h2><p>Use <a class="reference external" href="https://github.com/nimrod-code/babel">Nimrod's babel package manager</a> to install locally the github checkout:<pre>
-$ babel update
+<h2 id="development-version">Development version</h2><p>Use <a class="reference external" href="https://github.com/nim-lang/nimble">Nim's Nimble package manager</a> to install locally the github checkout:<pre>
+$ nimble update
 $ git clone https://github.com/gradha/genieos.git
 $ cd genieos
-$ babel install -y</pre>
+$ nimble install -y</pre>
 </p>
-<p>Alternatively you can use the following syntax to ask babel to install the development version:<pre>
-$ babel update
-$ babel install -y genieos#head</pre>
+<p>Alternatively you can use the following syntax to ask Nimble to install the development version directly:<pre>
+$ nimble update
+$ nimble install -y genieos@#head</pre>
 </p>
 
 <h1 id="usage">Usage</h1><p>Once you have installed the package you can <tt class="docutils literal"><span class="pre">import genieos</span></tt> in your programs and access the exported procs.</p>
-
-<h1 id="documentation">Documentation</h1><p>The genieos module comes with embedded docstrings.  <a class="reference external" href="http://en.wikipedia.org/wiki/Sooyoung">Sooyoung</a> recommends you to run the <tt class="docutils literal"><span class="pre">doc</span></tt> <a class="reference external" href="https://github.com/fowlmouth/nake">nakefile task</a> to obtain the HTML reference file with instructions on the exported symbols. Unix example:<pre>
-$ cd `babel path genieos`
-$ nake doc
-$ open docindex.html</pre>
-</p>
-<p>The <a class="reference external" href="docindex.html">docindex file</a> links all the available documentation. Generated documentation for all public API versions can also be found at <a class="reference external" href="http://gradha.github.io/genieos/">http://gradha.github.io/genieos/</a>.  No guarantees on its freshness, though, do check the generation date at the bottom.</p>
+<p>The <tt class="docutils literal"><span class="pre">genieos</span></tt> module comes with embedded docstrings.  <a class="reference external" href="http://en.wikipedia.org/wiki/Sooyoung">Sooyoung</a> recommends you to go to <a class="reference external" href="http://gradha.github.io/genieos/">http://gradha.github.io/genieos/</a>, there you will find the generated documentation for all public API versions.</p>
 
 <h1 id="extra-binaries">Extra binaries</h1><p>To put the <em>awesome</em> procs into use there's a <strong>trash</strong> command which works like your typical <strong>rm</strong> from the command line but instead of removing files it puts them nicely in your recycle bin. Check out the <a class="reference external" href="trash-binary">trash-binary directory</a> for further information.</p>
 
 <h1 id="roadmap">Roadmap</h1><p>This module implements MacOSX functionality, a toy OS <a class="reference external" href="http://en.wikipedia.org/wiki/Sunny_(singer)">Sunny</a> would enjoy using. <em>Real men</em> with <em>real operative systems</em>, however, are presumed to step in at some point and implement these procs (or add new ones) to their <em>manly platforms</em>. Unfortunately they are <a class="reference external" href="http://stackoverflow.com/a/6807599/172690">figuring out where the recycle bin is</a> or <a class="reference external" href="http://en.wikipedia.org/wiki/Windows_8">cleaning tiles for some reason</a>. Note how I carefully avoided any mention of snakes and dongles here... <em>oops</em>.</p>
-<p>Anyway, this is the development version 9.4.1. For a list of changes <a class="reference external" href="docs/CHANGES.html">see the docs/CHANGES.rst file</a>.</p>
+<p>Anyway, this is the development version 9.4.3. For a list of changes <a class="reference external" href="docs/CHANGES.html">see the docs/CHANGES.rst file</a>.</p>
 
 <h1 id="git-branches">Git branches</h1><p>This project uses the <a class="reference external" href="https://github.com/nvie/gitflow">git-flow branching model</a> with reversed defaults. Stable releases are tracked in the <tt class="docutils literal"><span class="pre">stable</span></tt> branch. Development happens in the default <tt class="docutils literal"><span class="pre">master</span></tt> branch.</p>
 
-<h1 id="feedback">Feedback</h1><p>You can send me feedback through <a class="reference external" href="https://github.com/gradha/genieos/issues">github's issue tracker</a>. I also take a look from time to time to <a class="reference external" href="http://forum.nimrod-lang.org">Nimrod's forums</a> where you can talk to other <em>more serious</em> nimrod programmers. </p>
+<h1 id="feedback">Feedback</h1><p>You can send me feedback through <a class="reference external" href="https://github.com/gradha/genieos/issues">github's issue tracker</a>. I also take a look from time to time to <a class="reference external" href="http://forum.nim-lang.org">Nim's forums</a> where you can talk to other <em>more serious</em> Nim programmers. </p>
 
-<small>Last modified: 2015-01-17 20:21 UTC. Local time: 2015-01-17 21:21.
+<small>Last modified: 2015-01-23 22:57 UTC. Local time: 2015-01-23 23:57.
 <div id="counter"></div>
 </small>
 <br>Rendered by lazy_rest 0.2.2.
@@ -318,7 +312,7 @@ function timeDifference(current, previous) {
 
 // Timer base code taken from http://stackoverflow.com/a/11876480/172690
 window.onload = function() {
-    var fileTime = new Date(1421526085000);
+    var fileTime = new Date(1422053860000);
 	var ctr = document.getElementById("counter");
 
     function incrementCounter() {

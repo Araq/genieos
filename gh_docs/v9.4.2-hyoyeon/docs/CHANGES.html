@@ -5,8 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Module test_lib</title>
+<title>genieos changes log</title>
 <style type="text/css">
+
+body {
+  color: black;
+  background: white;
+}
 
 span.DecNumber {color: blue}
 span.BinNumber {color: blue}
@@ -20,7 +25,7 @@ span.LongStringLit {color: blue}
 span.CharLit {color: blue}
 span.EscapeSequence {color: black}
 span.Operator {color: black}
-span.Punctuation {color: black}
+span.Punctation {color: black}
 span.Comment, span.LongComment {font-style:italic; color: green}
 span.RegularExpression  {color: DarkViolet}
 span.TagStart {color: DarkViolet}
@@ -238,29 +243,77 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
 </head>
 <body>
 <div class="document" id="documentId">
-<h1 class="title">Module test_lib</h1>
-<div class="navigation" id="navigation">
-<ul class="simple">
-<li>
-  <a class="reference" href="#6" id="56">Imports</a>
-  <ul class="simple">
-    
-  </ul>
-</li>
+<h1 class="title">genieos changes log</h1>
+<p>Changes for <a class="reference external" href="https://github.com/gradha/genieos">https://github.com/gradha/genieos</a>.</p>
 
+<h1 id="v9-4-2-hyoyeonhttp-en-wikipedia-org-wiki-kim-hyo-yeon-2015-01-23">v9.4.2 <a class="reference external" href="http://en.wikipedia.org/wiki/Kim_Hyo-yeon">Hyoyeon</a> 2015-01-23</h1><ul class="simple"><li><a class="reference external" href="https://github.com/gradha/genieos/issues/18">Disabled macosx clipboard debug printfs</a>.</li>
+<li><a class="reference external" href="https://github.com/gradha/genieos/issues/20">Updated Nimrod references and fixed for 0.10.2</a>.</li>
+<li><a class="reference external" href="https://github.com/gradha/genieos/issues/15">Added unit testing of OSX clipboard functionality</a>.</li>
 </ul>
-</div>
-<div class="content" id="content">
-Tests genieos module procs.
-<div class="section" id="6">
-<h1><a class="toc-backref" href="#56">Imports</a></h1>
-<dl class="item">
-<a class="reference external" href="genieos.html">genieos</a>, <a class="reference external" href="strutils.html">strutils</a>, <a class="reference external" href="os.html">os</a>
-</dl></div>
 
-</div>
+<h1 id="v9-4-0-tiffanyhttps-en-wikipedia-org-wiki-tiffany-south-korean-singer-2014-05-05">v9.4.0 <a class="reference external" href="https://en.wikipedia.org/wiki/Tiffany_(South_Korean_singer)">Tiffany</a> 2014-05-05</h1><ul class="simple"><li><a class="reference external" href="https://github.com/gradha/genieos/issues/11">Implemented clipboard reading on linux</a>.</li>
+<li><a class="reference external" href="https://github.com/gradha/genieos/issues/13">Fixed forward declarations for crossplatform compatibility</a>.</li>
+</ul>
 
-<small>Generated: 2015-01-17 21:21:25 UTC</small>
+<h1 id="v9-2-0-sunnyhttp-en-wikipedia-org-wiki-sunny-singer-2013-11-29">v9.2.0 <a class="reference external" href="http://en.wikipedia.org/wiki/Sunny_(singer)">Sunny</a> 2013-11-29</h1><ul class="simple"><li><a class="reference external" href="https://github.com/gradha/genieos/issues/5">Added basic read/write MacOSX clipboard support</a>.</li>
+<li><a class="reference external" href="https://github.com/gradha/genieos/issues/7">Crash retrieving clipboard string</a>.</li>
+<li><a class="reference external" href="https://github.com/gradha/genieos/issues/8">Convert documentation to rst</a>.</li>
+</ul>
+
+<h1 id="v9-0-1-jessicahttp-en-wikipedia-org-wiki-jessica-jung-2013-04-14">v9.0.1 <a class="reference external" href="http://en.wikipedia.org/wiki/Jessica_Jung">Jessica</a> 2013-04-14</h1><ul class="simple"><li><tt class="docutils literal"><span class="pre">trash</span></tt> command now plays back sound in background process through new <tt class="docutils literal"><span class="pre">-S</span></tt>/<tt class="docutils literal"><span class="pre">--sound</span></tt> switches (<a class="reference external" href="https://github.com/gradha/genieos/issues/2">#2</a>).</li>
+<li><tt class="docutils literal"><span class="pre">trash</span></tt> command now parses <tt class="docutils literal"><span class="pre">--silent</span></tt> parameter correctly and produces sound only when appropriate (<a class="reference external" href="https://github.com/gradha/genieos/issues/3">#3</a>).</li>
+</ul>
+
+<h1 id="v9-0-0-taeyeonhttp-en-wikipedia-org-wiki-kim-tae-yeon-2013-04-09">v9.0.0 <a class="reference external" href="http://en.wikipedia.org/wiki/Kim_Tae-yeon">Taeyeon</a> 2013-04-09</h1><ul class="simple"><li>Initial release.</li>
+</ul>
+
+<small>Last modified: 2015-01-23 22:57 UTC. Local time: 2015-01-23 23:57.
+<div id="counter"></div>
+</small>
+<br>Rendered by lazy_rest 0.2.2.
 </div>
 </body>
+<script type="text/javascript">
+// Time difference code from http://stackoverflow.com/q/11479170/172690
+function timeDifference(current, previous) {
+    var msPerMinute = 60 * 1000;
+    var msPerHour = msPerMinute * 60;
+    var msPerDay = msPerHour * 24;
+    var msPerMonth = msPerDay * 30;
+    var msPerYear = msPerDay * 365;
+
+    var elapsed = current - previous;
+
+    if (elapsed < msPerMinute) {
+         return Math.round(elapsed/1000) + ' seconds ago';
+    } else if (elapsed < msPerHour) {
+         return Math.round(elapsed/msPerMinute) + ' minutes ago';
+    } else if (elapsed < msPerDay ) {
+         return Math.round(elapsed/msPerHour ) + ' hours ago';
+    } else if (elapsed < msPerMonth) {
+         return 'approximately ' + Math.round(elapsed/msPerDay) + ' days ago';
+    } else if (elapsed < msPerYear) {
+         return 'approximately ' + Math.round(elapsed/msPerMonth) + ' months ago';
+    } else {
+         return 'approximately ' + Math.round(elapsed/msPerYear ) + ' years ago';
+    }
+}
+
+// Timer base code taken from http://stackoverflow.com/a/11876480/172690
+window.onload = function() {
+    var fileTime = new Date(1422053859000);
+	var ctr = document.getElementById("counter");
+
+    function incrementCounter() {
+		var nowTime = new Date();
+		var relTime = timeDifference(nowTime, fileTime)
+		ctr.innerHTML = relTime;
+		// Update ourselves in the future, every five seconds.
+		setTimeout(incrementCounter, 5000);
+    }
+
+    incrementCounter();
+}
+</script>
+
 </html>
