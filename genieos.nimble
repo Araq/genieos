@@ -1,6 +1,6 @@
 [Package]
 name          = "genieos"
-version       = "9.4.2"
+version       = "9.4.3"
 author        = "Grzegorz Adam Hankiewicz"
 description   = """Too awesome procs to be included in Nim's os module."""
 license       = "MIT"

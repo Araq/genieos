@@ -98,7 +98,7 @@ Unfortunately they are `figuring out where the recycle bin is
 reason <http://en.wikipedia.org/wiki/Windows_8>`_. Note how I carefully avoided
 any mention of snakes and dongles here... *oops*.
 
-Anyway, this is the stable version 9.4.2. For a list of changes `see the
+Anyway, this is the development version 9.4.3. For a list of changes `see the
 docs/CHANGES.rst file <docs/CHANGES.rst>`_.
 
 

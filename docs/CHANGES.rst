@@ -4,6 +4,11 @@ genieos changes log
 
 Changes for https://github.com/gradha/genieos.
 
+v9.4.3 `Yuri <http://en.wikipedia.org/wiki/Kwon_Yuri>`_ ????-??-??
+------------------------------------------------------------------
+
+* Nothing yet.
+
 v9.4.2 `Hyoyeon <http://en.wikipedia.org/wiki/Kim_Hyo-yeon>`_ 2015-01-23
 ------------------------------------------------------------------------
 
