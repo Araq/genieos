@@ -3,6 +3,7 @@
 nimcache/
 
 # Absolute paths.
+/.sybil_systems
 /LICENSE.html
 /README.html
 /docindex.html
