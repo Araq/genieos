@@ -3,11 +3,12 @@
 ## This module contains several procs which are *too awesome* to be included in
 ## `Nim's <http://nim-lang.org>`_ `os module <http://nim-lang.org/os.html>`_.
 ## Procs may not be available for your platform, please check their
-## availability at compile time with ``when``.  Example checking for the
-## availability of the ``recycle`` proc:
+## availability at compile time with ``when`` and `declared
+## <http://nim-lang.org/system.html#declared>`_.  Example checking for the
+## availability of the `recycle() <#recycle>`_ proc:
 ##
 ## .. code-block:: Nimrod
-##   when not defined(genieos.recycle):
+##   when not declared(genieos.recycle):
 ##     proc recycle(filename: string):
 ##       if existsDir filename:
 ##         removeDir filename
@@ -49,8 +50,9 @@ when defined(nimdoc):
     ## Moves a file or directory to the recycle bin of the user.
     ##
     ## If there are any errors recycling the file EOS will be raised. Note that
-    ## unlike os.removeFile() and os.removeDir() this works for any kind of file
-    ## type.
+    ## unlike `os.removeFile() <http://nim-lang.org/os.html#removeFile>`_ and
+    ## `os.removeDir() <http://nim-lang.org/os.html#removeDir>`_ this works for
+    ## any kind of file type.
     ##
     ## Available on: macosx.
 
@@ -78,7 +80,7 @@ when defined(nimdoc):
   proc set_clipboard*(text: string)
     ## Sets the OS clipboard to the specified text.
     ##
-    ## The text has to be a valid value, passing nil will assert in debug
+    ## The text has to be a valid value, passing ``nil`` will assert in debug
     ## builds and crash in release builds.
     ##
     ## Available on: macosx.
