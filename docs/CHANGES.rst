@@ -4,8 +4,8 @@ genieos changes log
 
 Changes for https://github.com/gradha/genieos.
 
-v9.4.1 ??? ????-??-??
----------------------
+v9.4.2 `Hyoyeon <http://en.wikipedia.org/wiki/Kim_Hyo-yeon>`_ 2015-01-23
+------------------------------------------------------------------------
 
 * `Disabled macosx clipboard debug printfs
   <https://github.com/gradha/genieos/issues/18>`_.
