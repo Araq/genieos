@@ -1,5 +1,5 @@
 ===================
-Genieos changes log
+genieos changes log
 ===================
 
 Changes for https://github.com/gradha/genieos.

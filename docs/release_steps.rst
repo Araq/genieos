@@ -1,6 +1,6 @@
-===============================================
-What to do for a new public release of genieos?
-===============================================
+=====================
+genieos release steps
+=====================
 
 * Create new milestone with version number (vXXX-singer) at
   https://github.com/gradha/genieos/issues/milestones/. Include in the
