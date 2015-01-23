@@ -1,5 +1,18 @@
-Changes
-=======
+===================
+genieos changes log
+===================
+
+Changes for https://github.com/gradha/genieos.
+
+v9.4.2 `Hyoyeon <http://en.wikipedia.org/wiki/Kim_Hyo-yeon>`_ 2015-01-23
+------------------------------------------------------------------------
+
+* `Disabled macosx clipboard debug printfs
+  <https://github.com/gradha/genieos/issues/18>`_.
+* `Updated Nimrod references and fixed for 0.10.2
+  <https://github.com/gradha/genieos/issues/20>`_.
+* `Added unit testing of OSX clipboard functionality
+  <https://github.com/gradha/genieos/issues/15>`_.
 
 v9.4.0 `Tiffany <https://en.wikipedia.org/wiki/Tiffany_(South_Korean_singer)>`_ 2014-05-05
 ------------------------------------------------------------------------------------------

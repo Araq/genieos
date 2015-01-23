@@ -1,7 +1,8 @@
-Documentation index
-===================
+===========================
+genieos documentation index
+===========================
 
-Available documentation files for `Nimrod genie os module
+Available documentation files for `Nim genie os module
 <https://github.com/gradha/genieos>`_:
 
 * API (available after running ``nake doc``):

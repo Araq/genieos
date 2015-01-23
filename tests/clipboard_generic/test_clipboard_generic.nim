@@ -1,15 +1,6 @@
-## Tests genieos module procs.
+# Tests genieos module procs.
 
-import genieos, strutils, os
-
-proc test_recycle() =
-  var filename : string
-
-  echo "Creating thousand directories to later recycle them."
-  for f in 0..999:
-    filename = "onetest$1.todelete" % $f
-    createDir filename
-    recycle filename
+import genieos, os
 
 proc test_clipboard() =
   let text = get_clipboard_string()
@@ -27,9 +18,9 @@ proc poll_clipboard() =
 proc test_change_clipboard() =
   let
     first_change = get_clipboard_change_timestamp()
-    input_string = "Nimrod is awesome!"
+    input_string = "Nim is awesome!"
 
-  set_clipboard("Nimrod is awesome!")
+  set_clipboard("Nim is awesome!")
   assert get_clipboard_change_timestamp() != first_change
   let readback_string = get_clipboard_string()
   assert readback_string == input_string
@@ -40,5 +31,4 @@ when isMainModule:
   test_clipboard()
   #poll_clipboard()
   test_change_clipboard()
-  test_recycle()
   echo "All tests done!"

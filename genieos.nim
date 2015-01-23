@@ -1,13 +1,14 @@
-## Too awesome procs to be included in nimrod.os module.
+## Too awesome procs to be included in Nim's os module.
 ##
 ## This module contains several procs which are *too awesome* to be included in
-## `Nimrod's <http://nimrod-code.org>`_ `os module
-## <http://nimrod-code.org/os.html>`_. Procs may not be available for your
-## platform, please check their availability at compile time with ``when``.
-## Example checking for the availability of the ``recycle`` proc:
+## `Nim's <http://nim-lang.org>`_ `os module <http://nim-lang.org/os.html>`_.
+## Procs may not be available for your platform, please check their
+## availability at compile time with ``when`` and `declared
+## <http://nim-lang.org/system.html#declared>`_.  Example checking for the
+## availability of the `recycle() <#recycle>`_ proc:
 ##
 ## .. code-block:: Nimrod
-##   when not defined(genieos.recycle):
+##   when not declared(genieos.recycle):
 ##     proc recycle(filename: string):
 ##       if existsDir filename:
 ##         removeDir filename
@@ -24,8 +25,7 @@ type
     defaultBeep, recycleBin
 
 const
-  VERSION_STR* = "9.4.0-tiffany" ## Module version as a string.
-  VERSION_INT* = (major: 9, minor: 4, maintenance: 0) ## \
+  version_int* = (major: 9, minor: 4, maintenance: 2) ## \
   ## Module version as an integer tuple.
   ##
   ## Major versions changes mean a break in API backwards compatibility, either
@@ -38,7 +38,11 @@ const
   ## Maintenance version changes mean I'm not perfect yet despite all the kpop
   ## I watch.
 
-# Here comes the nimrod block which declares the interface. It is only active
+  version_str* = ($version_int.major & "." & $version_int.minor & "." &
+      $version_int.maintenance) ## \
+    ## Module version as a string. Something like ``1.9.2``.
+
+# Here comes the nimdoc block which declares the interface. It is only active
 # during documentation generation to avoid compilation issues when something is
 # not defined.
 when defined(nimdoc):
@@ -46,8 +50,9 @@ when defined(nimdoc):
     ## Moves a file or directory to the recycle bin of the user.
     ##
     ## If there are any errors recycling the file EOS will be raised. Note that
-    ## unlike os.removeFile() and os.removeDir() this works for any kind of file
-    ## type.
+    ## unlike `os.removeFile() <http://nim-lang.org/os.html#removeFile>`_ and
+    ## `os.removeDir() <http://nim-lang.org/os.html#removeDir>`_ this works for
+    ## any kind of file type.
     ##
     ## Available on: macosx.
 
@@ -75,7 +80,7 @@ when defined(nimdoc):
   proc set_clipboard*(text: string)
     ## Sets the OS clipboard to the specified text.
     ##
-    ## The text has to be a valid value, passing nil will assert in debug
+    ## The text has to be a valid value, passing ``nil`` will assert in debug
     ## builds and crash in release builds.
     ##
     ## Available on: macosx.
@@ -95,7 +100,7 @@ when defined(nimdoc):
 
 when defined(macosx):
   {.passL: "-framework AppKit".}
-  {.compile: "private/genieos_macosx.m".}
+  {.compile: "genieos_pkg/genieos_macosx.m".}
   proc genieosMacosxNimRecycle(filename: cstring): int {.importc, nodecl.}
   proc genieosMacosxBeep() {.importc, nodecl.}
   proc genieosMacosxPlayAif(filename: cstring): cdouble {.importc.}
@@ -126,7 +131,8 @@ when defined(macosx):
   proc recycle*(filename: string) =
     let result = genieosMacosxNimRecycle(filename)
     if result != 0:
-      OSError("error " & $result & " recycling " & filename)
+      raise new_exception(OSError,
+        "error " & $result & " recycling " & filename)
 
   proc get_clipboard_string*(): string =
     let cresult = genieosMacosxClipboardString()

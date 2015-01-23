@@ -1,10 +1,12 @@
 # Global patterns
+*.exe
 *.swp
 *.todelete
 .DS_Store
 nimcache/
 
 # Full paths.
+/.sybil_systems
 /LICENSE.html
 /README.html
 /docindex.html
@@ -14,6 +16,6 @@ nimcache/
 /genieos.html
 /nakefile
 /recycle
-/tests/test_lib
+/tests/clipboard_osx/clipboard_payload.txt
 /trash-binary/README.html
 /trash-binary/trash
