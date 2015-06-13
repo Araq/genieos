@@ -49,10 +49,10 @@ when defined(nimdoc):
   proc recycle*(filename: string)
     ## Moves a file or directory to the recycle bin of the user.
     ##
-    ## If there are any errors recycling the file EOS will be raised. Note that
-    ## unlike `os.removeFile() <http://nim-lang.org/os.html#removeFile>`_ and
-    ## `os.removeDir() <http://nim-lang.org/os.html#removeDir>`_ this works for
-    ## any kind of file type.
+    ## If there are any errors recycling the file OSError will be raised. Note
+    ## that unlike `os.removeFile() <http://nim-lang.org/os.html#removeFile>`_
+    ## and `os.removeDir() <http://nim-lang.org/os.html#removeDir>`_ this works
+    ## for any kind of file type.
     ##
     ## Available on: macosx.
 

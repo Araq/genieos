@@ -51,8 +51,9 @@ proc process(filename: string, verbose: bool): bool =
   try:
     recycle filename
     result = true
-  except EOS:
+  except OSError:
     echo "Sorry, could not recycle " & filename
+
 
 proc play_sound_blocking() =
   ## Plays the recycle sound blocking the current thread/process.
@@ -78,7 +79,7 @@ proc play_sound_async() =
       discard(startProcess(search_binary, args = @["-S"]))
     else:
       #echo "Running shell version"
-      discard(startProcess(procname, args = @["-S"], options = {poUseShell}))
+      discard(startProcess(procname, args = @["-S"], options = {poUsePath}))
 
 
 when isMainModule:
