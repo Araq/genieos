@@ -56,7 +56,7 @@ when defined(nimdoc):
     ##
     ## Available on: macosx.
 
-  proc playSound*(soundType = defaultBeep): float64 {.discardable.}
+  proc play_sound*(soundType = defaultBeep): float64 {.discardable.}
     ## Tries to play a sound provided by your OS.
     ##
     ## May stop playing if your process exits in the meantime. For this reason
@@ -108,7 +108,7 @@ when defined(macosx):
   proc genieosMacosxClipboardChange(): int {.importc.}
   proc genieosMacosxSetClipboardString(cstring) {.importc.}
 
-  proc playSound*(soundType = defaultBeep): float64 =
+  proc play_sound*(soundType = defaultBeep): float64 =
     case soundType
     of defaultBeep:
       genieosMacosxBeep()
