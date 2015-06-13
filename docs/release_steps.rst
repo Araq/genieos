@@ -4,7 +4,9 @@ genieos release steps
 
 * Create new milestone with version number (vXXX-singer) at
   https://github.com/gradha/genieos/issues/milestones/. Include in the
-  milestone description: "In honour of singer-url".
+  milestone description: "In honour of singer-url". Singer names are picked
+  from the list mentioned in the `version_str docstring
+  <../genieos.html#version_str>`_.
 * Create new release issue *Release versionname* and assign to that milestone.
   Repeat link in issue description.
 * ``git flow release start versionname`` (versionname without v but including

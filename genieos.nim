@@ -41,6 +41,32 @@ const
   version_str* = ($version_int.major & "." & $version_int.minor & "." &
       $version_int.maintenance) ## \
     ## Module version as a string. Something like ``1.9.2``.
+    ##
+    ## In addition to the numeric string, public release versions are nicknamed
+    ## with the name of one singer from `Girls' Generation
+    ## <https://en.wikipedia.org/wiki/Girls'_Generation>`_. Names iterate
+    ## through the list in descending age order (in the Good Korea being older
+    ## gives you instant priviledges over the rest):
+    ##
+    ## * 1989-03-09: `Kim Tae-yeon
+    ##   <https://en.wikipedia.org/wiki/Kim_Tae-yeon>`_.
+    ## * 1989-04-18: `Jessica Sooyoung Jung
+    ##   <https://en.wikipedia.org/wiki/Jessica_Jung>`_.
+    ## * 1989-05-15: `Susan Soonkyu Lee
+    ##   <https://en.wikipedia.org/wiki/Sunny_(singer)>`_.
+    ## * 1989-08-01: `Stephanie Young Hwang
+    ##   <https://en.wikipedia.org/wiki/Tiffany_(South_Korean_singer)>`_.
+    ## * 1989-09-22: `Kim Hyo-yeon
+    ##   <https://en.wikipedia.org/wiki/Kim_Hyo-yeon>`_.
+    ## * 1989-12-05: `Kwon Yuri <https://en.wikipedia.org/wiki/Kwon_Yuri>`_.
+    ## * 1990-02-10: `Choi Soo-young
+    ##   <https://en.wikipedia.org/wiki/Choi_Soo-young>`_.
+    ## * 1990-05-30: `Im Yoona <https://en.wikipedia.org/wiki/Im_Yoona>`_.
+    ## * 1991-06-28: `Seo Ju-hyun <https://en.wikipedia.org/wiki/Seohyun>`_.
+    ##
+    ## Note how Jessica is included because `she is a really talented idol
+    ## <http://antikpopfangirl.blogspot.com.es/2015/04/positive-post-jessica-ex-snsd.html>`_.
+    ## And because by the time v9.0.1 was released she was still in the group.
 
 # Here comes the nimdoc block which declares the interface. It is only active
 # during documentation generation to avoid compilation issues when something is
