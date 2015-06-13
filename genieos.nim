@@ -109,105 +109,105 @@ when defined(nimdoc):
     ## clipboard.
     ##
     ## Available on: macosx.
-
-when defined(macosx):
-  {.passL: "-framework AppKit".}
-  {.compile: "genieos_pkg/genieos_macosx.m".}
-  proc genieosMacosxNimRecycle(filename: cstring): int {.importc, nodecl.}
-  proc genieosMacosxBeep() {.importc, nodecl.}
-  proc genieosMacosxPlayAif(filename: cstring): cdouble {.importc.}
-  proc genieosMacosxClipboardString(): cstring {.importc.}
-  proc genieosMacosxClipboardChange(): int {.importc.}
-  proc genieosMacosxSetClipboardString(s: cstring) {.importc.}
-
-  proc play_sound*(filename: string): float64 =
-    assert(not filename.is_nil)
-    if filename.exists_file:
-      result = genieosMacosxPlayAif(filename)
-    else:
-      result = -1
-
-  proc play_sound*(soundType = defaultBeep): float64 =
-    case soundType
-    of defaultBeep:
-      genieosMacosxBeep()
-      result = 0.150
-      return
-    of recycleBin:
-      # Path to recycle sounds from http://stackoverflow.com/a/9159760/172690
-      let
-        f1 = "/System/Library/Components/CoreAudio.component/" &
-          "Contents/SharedSupport/SystemSounds/dock/drag to trash.aif"
-        f2 = "/System/Library/Components/CoreAudio.component/" &
-          "Contents/Resources/SystemSounds/drag to trash.aif"
-      if existsFile(f1):
-        result = f1.play_sound
-      elif existsFile(f2):
-        result = f2.play_sound
+else: ## nimdoc
+  when defined(macosx):
+    {.passL: "-framework AppKit".}
+    {.compile: "genieos_pkg/genieos_macosx.m".}
+    proc genieosMacosxNimRecycle(filename: cstring): int {.importc, nodecl.}
+    proc genieosMacosxBeep() {.importc, nodecl.}
+    proc genieosMacosxPlayAif(filename: cstring): cdouble {.importc.}
+    proc genieosMacosxClipboardString(): cstring {.importc.}
+    proc genieosMacosxClipboardChange(): int {.importc.}
+    proc genieosMacosxSetClipboardString(s: cstring) {.importc.}
+  
+    proc play_sound*(filename: string): float64 =
+      assert(not filename.is_nil)
+      if filename.exists_file:
+        result = genieosMacosxPlayAif(filename)
       else:
         result = -1
-
-  proc recycle*(filename: string) =
-    let result = genieosMacosxNimRecycle(filename)
-    if result != 0:
-      raise new_exception(OSError,
-        "error " & $result & " recycling " & filename)
-
-  proc get_clipboard_string*(): string =
-    let cresult = genieosMacosxClipboardString()
-    if not cresult.isNil():
-      result = $cresult
-
-  proc get_clipboard_change_timestamp*(): int =
-    result = genieosMacosxClipboardChange()
-
-  proc set_clipboard*(text: string) =
-    assert (not text.isNil())
-    genieosMacosxSetClipboardString(cstring(text))
-
-when defined(Linux):
-  import x, xlib, xatom
-  proc get_clipboard_string*: string =
-    result = newStringOfCap(512)
-    const
-      BUFSIZ = 2048 # missing from x headers? i found it on the internet
-    var
-      clip,utf8,ty: TAtom
-      dpy: PDisplay
-      win: TWindow
-      ev: TXEvent
-      fmt: cint
-      off = 0.clong
-      data: ptr cuchar
-      len,more: culong
-    
-    dpy = XOpenDisplay(nil)
-    if dpy.isNil: return
-    
-    utf8 = XInternAtom(dpy,"UTF8_STRING",0)
-    clip = XInternAtom(dpy,"__MY_STR",0)
-    win = XCreateSimpleWindow(dpy, defaultRootWindow(dpy), 0,0,1,1,0,
-      CopyFromParent, CopyFromParent)
-    
-    discard XConvertSelection(dpy, XA_PRIMARY, utf8, clip, win, CurrentTime)
-    discard XNextEvent(dpy, ev.addr)
-    
-    if ev.theType == SelectionNotify:
-      let sel = cast[PXSelectionEvent](ev.addr)
-      if sel.property != None:
-        while true:
-          discard XGetWindowProperty(
-            dpy, win, sel.property, off, BUFSIZ.clong,
-            0.TBool, utf8, ty.addr, fmt.addr, len.addr,
-            more.addr, data.addr)
-          let newLen = off.int + len.int
-          if result.len < newLen:
-            result.setLen newLen
-          copyMem result[off.int].addr, data, len.int
-          
-          discard XFree(data)
-          off += len.clong
-          if more.int < 1:
-            break
-    
-    discard XCloseDisplay(dpy)
+  
+    proc play_sound*(soundType = defaultBeep): float64 =
+      case soundType
+      of defaultBeep:
+        genieosMacosxBeep()
+        result = 0.150
+        return
+      of recycleBin:
+        # Path to recycle sounds from http://stackoverflow.com/a/9159760/172690
+        let
+          f1 = "/System/Library/Components/CoreAudio.component/" &
+            "Contents/SharedSupport/SystemSounds/dock/drag to trash.aif"
+          f2 = "/System/Library/Components/CoreAudio.component/" &
+            "Contents/Resources/SystemSounds/drag to trash.aif"
+        if existsFile(f1):
+          result = f1.play_sound
+        elif existsFile(f2):
+          result = f2.play_sound
+        else:
+          result = -1
+  
+    proc recycle*(filename: string) =
+      let result = genieosMacosxNimRecycle(filename)
+      if result != 0:
+        raise new_exception(OSError,
+          "error " & $result & " recycling " & filename)
+  
+    proc get_clipboard_string*(): string =
+      let cresult = genieosMacosxClipboardString()
+      if not cresult.isNil():
+        result = $cresult
+  
+    proc get_clipboard_change_timestamp*(): int =
+      result = genieosMacosxClipboardChange()
+  
+    proc set_clipboard*(text: string) =
+      assert (not text.isNil())
+      genieosMacosxSetClipboardString(cstring(text))
+  
+  when defined(Linux):
+    import x, xlib, xatom
+    proc get_clipboard_string*: string =
+      result = newStringOfCap(512)
+      const
+        BUFSIZ = 2048 # missing from x headers? i found it on the internet
+      var
+        clip,utf8,ty: TAtom
+        dpy: PDisplay
+        win: TWindow
+        ev: TXEvent
+        fmt: cint
+        off = 0.clong
+        data: ptr cuchar
+        len,more: culong
+      
+      dpy = XOpenDisplay(nil)
+      if dpy.isNil: return
+      
+      utf8 = XInternAtom(dpy,"UTF8_STRING",0)
+      clip = XInternAtom(dpy,"__MY_STR",0)
+      win = XCreateSimpleWindow(dpy, defaultRootWindow(dpy), 0,0,1,1,0,
+        CopyFromParent, CopyFromParent)
+      
+      discard XConvertSelection(dpy, XA_PRIMARY, utf8, clip, win, CurrentTime)
+      discard XNextEvent(dpy, ev.addr)
+      
+      if ev.theType == SelectionNotify:
+        let sel = cast[PXSelectionEvent](ev.addr)
+        if sel.property != None:
+          while true:
+            discard XGetWindowProperty(
+              dpy, win, sel.property, off, BUFSIZ.clong,
+              0.TBool, utf8, ty.addr, fmt.addr, len.addr,
+              more.addr, data.addr)
+            let newLen = off.int + len.int
+            if result.len < newLen:
+              result.setLen newLen
+            copyMem result[off.int].addr, data, len.int
+            
+            discard XFree(data)
+            off += len.clong
+            if more.int < 1:
+              break
+      
+      discard XCloseDisplay(dpy)
