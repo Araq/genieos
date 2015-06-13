@@ -1,5 +1,10 @@
 import genieos, argument_parser, tables, times, os
 
+## Plays back any sound file supported by your OS.
+##
+## Implements basic command line interface to play back files specified as
+## parameters. Shows how to wait for the sounds to finish.
+
 const
   PARAM_VERSION = @["-v", "--version"]
   PARAM_HELP = @["-h", "--help"]
