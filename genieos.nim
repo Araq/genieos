@@ -118,7 +118,7 @@ when defined(macosx):
   proc genieosMacosxPlayAif(filename: cstring): cdouble {.importc.}
   proc genieosMacosxClipboardString(): cstring {.importc.}
   proc genieosMacosxClipboardChange(): int {.importc.}
-  proc genieosMacosxSetClipboardString(cstring) {.importc.}
+  proc genieosMacosxSetClipboardString(s: cstring) {.importc.}
 
   proc play_sound*(filename: string): float64 =
     assert(not filename.is_nil)
