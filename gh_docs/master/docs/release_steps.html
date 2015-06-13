@@ -244,7 +244,7 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
 <body>
 <div class="document" id="documentId">
 <h1 class="title">genieos release steps</h1>
-<ul class="simple"><li>Create new milestone with version number (vXXX-singer) at <a class="reference external" href="https://github.com/gradha/genieos/issues/milestones/">https://github.com/gradha/genieos/issues/milestones/</a>. Include in the milestone description: &quot;In honour of singer-url&quot;.</li>
+<ul class="simple"><li>Create new milestone with version number (vXXX-singer) at <a class="reference external" href="https://github.com/gradha/genieos/issues/milestones/">https://github.com/gradha/genieos/issues/milestones/</a>. Include in the milestone description: &quot;In honour of singer-url&quot;. Singer names are picked from the list mentioned in the <a class="reference external" href="../genieos.html#version_str">version_str docstring</a>.</li>
 <li>Create new release issue <em>Release versionname</em> and assign to that milestone. Repeat link in issue description.</li>
 <li><tt class="docutils literal"><span class="pre">git flow release start versionname</span></tt> (versionname without v but including SNSD member, like <tt class="docutils literal"><span class="pre">9.1.2-sunny</span></tt>).</li>
 <li>Update version numbers:<ul class="simple"><li>Modify <a class="reference external" href="../README.html">../README.rst</a>.</li>
@@ -274,7 +274,7 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
 <li>Announce at <a class="reference external" href="http://forum.nim-lang.org/t/143">http://forum.nim-lang.org/t/143</a>.</li>
 </ul>
 
-<small>Last modified: 2015-01-23 22:57 UTC. Local time: 2015-01-23 23:57.
+<small>Last modified: 2015-06-13 16:10 UTC. Local time: 2015-06-13 18:10.
 <div id="counter"></div>
 </small>
 <br>Rendered by lazy_rest 0.2.2.
@@ -308,7 +308,7 @@ function timeDifference(current, previous) {
 
 // Timer base code taken from http://stackoverflow.com/a/11876480/172690
 window.onload = function() {
-    var fileTime = new Date(1422053860000);
+    var fileTime = new Date(1434211835000);
 	var ctr = document.getElementById("counter");
 
     function incrementCounter() {

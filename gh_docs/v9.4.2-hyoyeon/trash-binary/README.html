@@ -295,7 +295,7 @@ sys	0m0.026s</pre>
 <p>Ah, that's much better. Without producing the sound (and waiting for it to play back) the Nim version goes under 100ms, much closer to the 77ms of the cheating Objective-C version. <strong>UPDATE:</strong> after <a class="reference external" href="https://github.com/gradha/genieos/issues/2">implementing sound playback in the background</a> the normal command returns much faster to the foreground, but the external process spawn still takes some milliseconds.</p>
 <p>OK, that's it. I won't be running this benchmarks in any way or form in the future since that could generate different results due to the CPU load of my machine and break my happiness. Simply sleep better knowing <a class="reference external" href="http://nim-lang.org">Nim is awesome</a>. </p>
 
-<small>Last modified: 2015-01-23 22:57 UTC. Local time: 2015-01-23 23:57.
+<small>Last modified: 2015-06-13 16:10 UTC. Local time: 2015-06-13 18:10.
 <div id="counter"></div>
 </small>
 <br>Rendered by lazy_rest 0.2.2.
@@ -329,7 +329,7 @@ function timeDifference(current, previous) {
 
 // Timer base code taken from http://stackoverflow.com/a/11876480/172690
 window.onload = function() {
-    var fileTime = new Date(1422053859000);
+    var fileTime = new Date(1434211835000);
 	var ctr = document.getElementById("counter");
 
     function incrementCounter() {

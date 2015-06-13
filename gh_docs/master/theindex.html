@@ -278,28 +278,24 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
 <dt><span>get_clipboard_change_timestamp:</span></dt><ul class="simple"><dd>
 <li><a class="reference external"
           title="Returns an integer representing the last version of the clipboard.…" href="genieos.html#get_clipboard_change_timestamp,">genieos : get_clipboard_change_timestamp*(): int</a></li>
-          <li><a class="reference external" href="genieos.html#get_clipboard_change_timestamp,_2">genieos : get_clipboard_change_timestamp*(): int</a></li>
           </ul></dd>
 <dt><span>get_clipboard_string:</span></dt><ul class="simple"><dd>
 <li><a class="reference external"
           title="Returns the contents of the OS clipboard as a string.…" href="genieos.html#get_clipboard_string,">genieos : get_clipboard_string*(): string</a></li>
-          <li><a class="reference external" href="genieos.html#get_clipboard_string,_2">genieos : get_clipboard_string*(): string</a></li>
-          <li><a class="reference external" href="genieos.html#get_clipboard_string,_3">genieos : get_clipboard_string*(): string</a></li>
           </ul></dd>
-<dt><span>playSound:</span></dt><ul class="simple"><dd>
+<dt><span>play_sound:</span></dt><ul class="simple"><dd>
 <li><a class="reference external"
-          title="Tries to play a sound provided by your OS.…" href="genieos.html#playSound,">genieos : playSound*(soundType = defaultBeep): float64</a></li>
-          <li><a class="reference external" href="genieos.html#playSound,_2">genieos : playSound*(soundType = defaultBeep): float64</a></li>
+          title="Tries to play a sound provided by your OS.…" href="genieos.html#play_sound,">genieos : play_sound*(soundType = defaultBeep): float64</a></li>
+          <li><a class="reference external"
+          title="Tries to play any random file supported by your OS.…" href="genieos.html#play_sound,string">genieos : play_sound*(filename: string): float64</a></li>
           </ul></dd>
 <dt><span>recycle:</span></dt><ul class="simple"><dd>
 <li><a class="reference external"
           title="Moves a file or directory to the recycle bin of the user.…" href="genieos.html#recycle,string">genieos : recycle*(filename: string)</a></li>
-          <li><a class="reference external" href="genieos.html#recycle,string_2">genieos : recycle*(filename: string)</a></li>
           </ul></dd>
 <dt><span>set_clipboard:</span></dt><ul class="simple"><dd>
 <li><a class="reference external"
           title="Sets the OS clipboard to the specified text.…" href="genieos.html#set_clipboard,string">genieos : set_clipboard*(text: string)</a></li>
-          <li><a class="reference external" href="genieos.html#set_clipboard,string_2">genieos : set_clipboard*(text: string)</a></li>
           </ul></dd>
 <dt><span>TSound:</span></dt><ul class="simple"><dd>
 <li><a class="reference external" href="genieos.html#TSound">genieos : TSound</a></li>
@@ -314,7 +310,7 @@ a.reference:hover {color: #E00000;background-color: #ffff00;display: margin;
           </ul></dd>
 </p>
 
-<small>Last modified: 2015-01-23 22:57 UTC. Local time: 2015-01-23 23:57.
+<small>Last modified: 2015-06-13 16:10 UTC. Local time: 2015-06-13 18:10.
 <div id="counter"></div>
 </small>
 <br>Rendered by lazy_rest 0.2.2.
@@ -348,7 +344,7 @@ function timeDifference(current, previous) {
 
 // Timer base code taken from http://stackoverflow.com/a/11876480/172690
 window.onload = function() {
-    var fileTime = new Date(1422053860000);
+    var fileTime = new Date(1434211835000);
 	var ctr = document.getElementById("counter");
 
     function incrementCounter() {
