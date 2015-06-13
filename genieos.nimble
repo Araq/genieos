@@ -18,7 +18,7 @@ nakefile.nim
 trash-binary/README.rst
 trash-binary/trash.nim
 trash-binary/trash.nimble
-trash-binary/trash.nimrod.cfg
+trash-binary/trash.nim.cfg
 
 """
 
