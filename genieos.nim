@@ -70,6 +70,18 @@ when defined(nimdoc):
     ##
     ## Available on: macosx.
 
+  proc play_sound*(filename: string): float64 {.discardable.}
+    ## Tries to play any random file supported by your OS.
+    ##
+    ## May stop playing if your process exits in the meantime. For this reason
+    ## the proc returns the amount of seconds you have to wait for the sound to
+    ## fully play out in case you want to wait for it.
+    ##
+    ## Returns a negative value if for some reason the sound could not be loaded
+    ## or played back to the user.
+    ##
+    ## Available on: macosx.
+
   proc get_clipboard_string*(): string
     ## Returns the contents of the OS clipboard as a string.
     ##
@@ -108,6 +120,13 @@ when defined(macosx):
   proc genieosMacosxClipboardChange(): int {.importc.}
   proc genieosMacosxSetClipboardString(cstring) {.importc.}
 
+  proc play_sound*(filename: string): float64 =
+    assert(not filename.is_nil)
+    if filename.exists_file:
+      result = genieosMacosxPlayAif(filename)
+    else:
+      result = -1
+
   proc play_sound*(soundType = defaultBeep): float64 =
     case soundType
     of defaultBeep:
@@ -122,9 +141,9 @@ when defined(macosx):
         f2 = "/System/Library/Components/CoreAudio.component/" &
           "Contents/Resources/SystemSounds/drag to trash.aif"
       if existsFile(f1):
-        result = genieosMacosxPlayAif(f1)
+        result = f1.play_sound
       elif existsFile(f2):
-        result = genieosMacosxPlayAif(f2)
+        result = f2.play_sound
       else:
         result = -1
 
